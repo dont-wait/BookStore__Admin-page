@@ -1,0 +1,838 @@
+{
+  "dashboard": {
+    "stats": [
+      {
+        "id": 1,
+        "title": "Total Books",
+        "value": 9999,
+        "icon": "fas fa-book",
+        "gradient": "linear-gradient(45deg, #ff6b6b, #ff8e8e)"
+      },
+      {
+        "id": 2,
+        "title": "Total Users",
+        "value": 892,
+        "icon": "fas fa-users",
+        "gradient": "linear-gradient(45deg, #4ecdc4, #70d7d0)"
+      },
+      {
+        "id": 3,
+        "title": "Today's Sales",
+        "value": 156,
+        "icon": "fas fa-shopping-cart",
+        "gradient": "linear-gradient(45deg, #45b7d1, #6cc8e6)"
+      },
+      {
+        "id": 4,
+        "title": "Revenue",
+        "value": 12450,
+        "icon": "fas fa-dollar-sign",
+        "gradient": "linear-gradient(45deg, #f7b801, #f9ca3d)"
+      }
+    ],
+    "recentTransactions": [
+      {
+        "id": "TXN001",
+        "customer": "John Doe",
+        "book": "The Great Gatsby",
+        "amount": 15.99,
+        "status": "Completed"
+      },
+      {
+        "id": "TXN002",
+        "customer": "Jane Smith",
+        "book": "To Kill a Mockingbird",
+        "amount": 12.50,
+        "status": "Pending"
+      },
+      {
+        "id": "TXN003",
+        "customer": "Mike Johnson",
+        "book": "1984",
+        "amount": 13.25,
+        "status": "Completed"
+      }
+    ],
+    "topSellingBooks": [
+      {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "sales": 145
+      },
+      {
+        "id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "sales": 132
+      },
+      {
+        "id": 3,
+        "title": "1984",
+        "author": "George Orwell",
+        "sales": 118
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fiction",
+      "description": "Fictional stories and novels",
+      "booksCount": 456,
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "Non-Fiction",
+      "description": "Real stories and educational content",
+      "booksCount": 234,
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "name": "Science Fiction",
+      "description": "Futuristic and scientific stories",
+      "booksCount": 123,
+      "status": "Active"
+    }
+  ],
+  "categoriesV2": [
+    {
+      "id": 1,
+      "name": "Kỹ năng Quản lý cảm xúc"
+    },
+    {
+      "id": 2,
+      "name": "Sách Tôn Giáo - Tâm Linh"
+    },
+    {
+      "id": 3,
+      "name": "Sách quản trị, lãnh đạo"
+    },
+    {
+      "id": 4,
+      "name": "Sách tư duy - Kỹ năng sống"
+    },
+    {
+      "id": 5,
+      "name": "Tài chính cá nhân"
+    },
+    {
+      "id": 6,
+      "name": "Văn học thiếu nhi"
+    },
+    {
+      "id": 7,
+      "name": "Lịch Sử Việt Nam"
+    },
+    {
+      "id": 8,
+      "name": "Danh nhân Việt Nam"
+    },
+    {
+      "id": 9,
+      "name": "Triết học"
+    },
+    {
+      "id": 10,
+      "name": "Sách Tô Màu Dành Cho Người Lớn"
+    },
+    {
+      "id": 11,
+      "name": "Tiểu sử - Hồi ký"
+    },
+    {
+      "id": 12,
+      "name": "Kỹ Năng Giao Tiếp"
+    },
+    {
+      "id": 13,
+      "name": "Sách kỹ năng làm việc"
+    },
+    {
+      "id": 14,
+      "name": "Sách tâm lý học - khác"
+    },
+    {
+      "id": 15,
+      "name": "Bài học kinh doanh"
+    },
+    {
+      "id": 16,
+      "name": "Luật Đất đai"
+    },
+    {
+      "id": 17,
+      "name": "Tác Phẩm Kinh Điển Nước Ngoài"
+    },
+    {
+      "id": 18,
+      "name": "Truyện dài"
+    },
+    {
+      "id": 19,
+      "name": "Đạo đức - Kỹ năng sống"
+    },
+    {
+      "id": 20,
+      "name": "Lĩnh vực khác"
+    },
+    {
+      "id": 21,
+      "name": "Truyện ngắn - Tản văn - Tạp Văn Nước Ngoài"
+    },
+    {
+      "id": 22,
+      "name": "Nghệ thuật sống"
+    },
+    {
+      "id": 23,
+      "name": "Tác Phẩm Kinh Điển Việt Nam"
+    },
+    {
+      "id": 24,
+      "name": "Truyện ngắn - Tản văn - Tạp Văn Việt Nam"
+    },
+    {
+      "id": 25,
+      "name": "Tiểu Thuyết Phương Tây"
+    },
+    {
+      "id": 26,
+      "name": "Truyện Giả tưởng - Huyền Bí - Phiêu Lưu"
+    },
+    {
+      "id": 27,
+      "name": "Cẩm nang làm cha mẹ"
+    },
+    {
+      "id": 28,
+      "name": "Sách kinh tế học - khác"
+    },
+    {
+      "id": 29,
+      "name": "Truyện Tranh, Manga, Comic"
+    },
+    {
+      "id": 30,
+      "name": "Lịch Sử Thế Giới"
+    },
+    {
+      "id": 31,
+      "name": "Tiểu Thuyết Phương Đông"
+    },
+    {
+      "id": 32,
+      "name": "Truyện trinh thám"
+    },
+    {
+      "id": 33,
+      "name": "Truyện kể cho bé"
+    },
+    {
+      "id": 34,
+      "name": "Sách Y Học Khác"
+    },
+    {
+      "id": 35,
+      "name": "1980Books"
+    },
+    {
+      "id": 36,
+      "name": "Sách giáo dục"
+    },
+    {
+      "id": 37,
+      "name": "Sách Marketing - Bán hàng"
+    },
+    {
+      "id": 38,
+      "name": "Kỹ Thuật khác"
+    },
+    {
+      "id": 39,
+      "name": "Sách hướng nghiệp"
+    },
+    {
+      "id": 40,
+      "name": "Kiến thức - Bách khoa"
+    },
+    {
+      "id": 41,
+      "name": "Tôn Giáo - Tâm Linh Khác"
+    },
+    {
+      "id": 42,
+      "name": "Sách chiêm tinh - horoscope - khác"
+    },
+    {
+      "id": 43,
+      "name": "Triết Học phương Tây"
+    },
+    {
+      "id": 44,
+      "name": "Sách Tâm Lý Tuổi Teen"
+    },
+    {
+      "id": 45,
+      "name": "Sách Y Học Hiện Đại"
+    },
+    {
+      "id": 46,
+      "name": "Sách tham khảo cấp I"
+    },
+    {
+      "id": 47,
+      "name": "Truyện ngôn tình"
+    },
+    {
+      "id": 48,
+      "name": "Sách Phong Tục - Tập Quán Việt Nam"
+    },
+    {
+      "id": 49,
+      "name": "Truyện kinh dị"
+    },
+    {
+      "id": 50,
+      "name": "Kế toán"
+    },
+    {
+      "id": 51,
+      "name": "Luyện thi Tiếng Hoa HSK"
+    },
+    {
+      "id": 52,
+      "name": "Sách Y Học Cổ Truyền"
+    },
+    {
+      "id": 53,
+      "name": "Sách khởi nghiệp"
+    },
+    {
+      "id": 54,
+      "name": "Đầu tư"
+    },
+    {
+      "id": 55,
+      "name": "Sách Học Tiếng Anh"
+    },
+    {
+      "id": 56,
+      "name": "Sách doanh nhân"
+    },
+    {
+      "id": 57,
+      "name": "Triết Học phương Đông"
+    },
+    {
+      "id": 58,
+      "name": "Kiến Thức Bách Khoa"
+    },
+    {
+      "id": 59,
+      "name": "Sách quản trị nhân lực"
+    },
+    {
+      "id": 60,
+      "name": "Tiếng Hoa Giao Tiếp"
+    },
+    {
+      "id": 61,
+      "name": "Sách học tiếng anh - khác"
+    },
+    {
+      "id": 62,
+      "name": "Sách tham khảo cấp III"
+    },
+    {
+      "id": 63,
+      "name": "Sách tài chính - khác"
+    },
+    {
+      "id": 64,
+      "name": "Giáo trình Hán ngữ"
+    },
+    {
+      "id": 65,
+      "name": "Sách Chữa Lành"
+    },
+    {
+      "id": 66,
+      "name": "Sách tham khảo cấp II"
+    },
+    {
+      "id": 67,
+      "name": "Danh nhân Nước Ngoài"
+    },
+    {
+      "id": 68,
+      "name": "Sách ăn dặm cho bé"
+    },
+    {
+      "id": 69,
+      "name": "Tiếng Anh giao tiếp"
+    },
+    {
+      "id": 70,
+      "name": "Ngữ pháp Tiếng Anh"
+    },
+    {
+      "id": 71,
+      "name": "Yoga"
+    },
+    {
+      "id": 72,
+      "name": "Thai giáo"
+    },
+    {
+      "id": 73,
+      "name": "Phong Thủy"
+    },
+    {
+      "id": 74,
+      "name": "Truyện tranh thiếu nhi"
+    },
+    {
+      "id": 75,
+      "name": "Chăm sóc sức khỏe em bé"
+    },
+    {
+      "id": 76,
+      "name": "Sách chuyển động -Tương tác"
+    },
+    {
+      "id": 77,
+      "name": "Sách Nấu ăn"
+    },
+    {
+      "id": 78,
+      "name": "Tử Vi"
+    },
+    {
+      "id": 79,
+      "name": "Tác phẩm kinh điển"
+    },
+    {
+      "id": 80,
+      "name": "Phê Bình - Lý Luận Văn Học"
+    },
+    {
+      "id": 81,
+      "name": "Luật Dân sự"
+    },
+    {
+      "id": 82,
+      "name": "Kỹ Năng Khác"
+    },
+    {
+      "id": 83,
+      "name": "Kinh tế chính trị"
+    },
+    {
+      "id": 84,
+      "name": "Tiền kỹ thuật số"
+    },
+    {
+      "id": 85,
+      "name": "Luật Tố tụng dân sự"
+    },
+    {
+      "id": 86,
+      "name": "Truyện Chữ cổ tích - Ngụ ngôn"
+    },
+    {
+      "id": 87,
+      "name": "Luyện thi IELTS"
+    },
+    {
+      "id": 88,
+      "name": "Bút Ký - Tự Truyện"
+    },
+    {
+      "id": 89,
+      "name": "Truyện Chữ Đam Mỹ"
+    },
+    {
+      "id": 90,
+      "name": "Từ Vựng Tiếng Anh"
+    },
+    {
+      "id": 91,
+      "name": "Chính trị đảng phái"
+    },
+    {
+      "id": 92,
+      "name": "Chạy bộ"
+    },
+    {
+      "id": 93,
+      "name": "Sách ảnh"
+    },
+    {
+      "id": 94,
+      "name": "Truyện cổ tích"
+    },
+    {
+      "id": 95,
+      "name": "Kỹ sư - Điện tử - Công nghệ thông tin"
+    },
+    {
+      "id": 96,
+      "name": "Tạp Chí - Catalogue"
+    },
+    {
+      "id": 97,
+      "name": "Sách khoa học"
+    },
+    {
+      "id": 98,
+      "name": "Sách Kiến Thức - Kỹ Năng Cho Trẻ"
+    },
+    {
+      "id": 99,
+      "name": "Ngữ pháp Tiếng Nhật"
+    },
+    {
+      "id": 100,
+      "name": "Thể dục - thể thao - khác"
+    },
+    {
+      "id": 101,
+      "name": "Luyện thi TOEFL"
+    },
+    {
+      "id": 102,
+      "name": "Luyện thi TOEIC"
+    },
+    {
+      "id": 103,
+      "name": "An toàn & Sơ cứu"
+    },
+    {
+      "id": 104,
+      "name": "Light novel"
+    },
+    {
+      "id": 105,
+      "name": "Truyện tranh Ehon"
+    },
+    {
+      "id": 106,
+      "name": "Truyện ngắn - Tản văn - Tạp Văn"
+    },
+    {
+      "id": 107,
+      "name": "Kinh tế vi mô"
+    },
+    {
+      "id": 108,
+      "name": "Tài chính doanh nghiệp"
+    },
+    {
+      "id": 109,
+      "name": "Thẻ luyện thi"
+    },
+    {
+      "id": 110,
+      "name": "Sách Hôn Nhân - Giới Tính"
+    },
+    {
+      "id": 111,
+      "name": "Kinh Dịch Học"
+    },
+    {
+      "id": 112,
+      "name": "Lập Trình"
+    },
+    {
+      "id": 113,
+      "name": "Mỹ thuật - Kiến trúc Thế giới"
+    },
+    {
+      "id": 114,
+      "name": "Ngoại Ngữ Khác"
+    },
+    {
+      "id": 115,
+      "name": "Phóng Sự - Ký Sự"
+    },
+    {
+      "id": 116,
+      "name": "Sách Y Học"
+    },
+    {
+      "id": 117,
+      "name": "Sức khỏe tinh thần"
+    },
+    {
+      "id": 118,
+      "name": "Tranh Truyện"
+    },
+    {
+      "id": 119,
+      "name": "Công Giáo"
+    },
+    {
+      "id": 120,
+      "name": "Kinh tế - Tài chính - Quản trị"
+    },
+    {
+      "id": 121,
+      "name": "Ca Dao"
+    },
+    {
+      "id": 122,
+      "name": "Triết học khác"
+    },
+    {
+      "id": 123,
+      "name": "Sách Giáo Khoa Cấp 1"
+    },
+    {
+      "id": 124,
+      "name": "Âm nhạc - điện ảnh - khác"
+    },
+    {
+      "id": 125,
+      "name": "Dinh dưỡng thai kỳ"
+    },
+    {
+      "id": 126,
+      "name": "Chiêm Tinh Học"
+    },
+    {
+      "id": 127,
+      "name": "Sách kinh tế học"
+    },
+    {
+      "id": 128,
+      "name": "Sách học Đàn Piano"
+    },
+    {
+      "id": 129,
+      "name": "Sách Luyện Thi Đại Học - Cao Đẳng"
+    },
+    {
+      "id": 130,
+      "name": "Tâm lý học hành vi"
+    },
+    {
+      "id": 131,
+      "name": "Sách Giáo Khoa Cấp 2"
+    },
+    {
+      "id": 132,
+      "name": "Luật Hình sự"
+    },
+    {
+      "id": 133,
+      "name": "Chủ nghĩa xã hội - Tư tưởng Hồ Chí Minh"
+    },
+    {
+      "id": 134,
+      "name": "Tâm lý học tội phạm"
+    },
+    {
+      "id": 135,
+      "name": "Kỹ Năng Sáng Tạo"
+    },
+    {
+      "id": 136,
+      "name": "Tô màu - Luyện chữ"
+    },
+    {
+      "id": 137,
+      "name": "Luật Hành chính"
+    },
+    {
+      "id": 138,
+      "name": "Thơ"
+    },
+    {
+      "id": 139,
+      "name": "Sách chuyên đề"
+    },
+    {
+      "id": 140,
+      "name": "Giáo trình đại học - cao đẳng - khác"
+    },
+    {
+      "id": 141,
+      "name": "Nhạc lý"
+    },
+    {
+      "id": 142,
+      "name": "Từ Điển Tiếng Việt"
+    },
+    {
+      "id": 143,
+      "name": "Luyện thi N5"
+    },
+    {
+      "id": 144,
+      "name": "Luyện thi N3"
+    },
+    {
+      "id": 145,
+      "name": "Ăn kiêng - Giảm cân"
+    },
+    {
+      "id": 146,
+      "name": "Tin Học Văn Phòng"
+    },
+    {
+      "id": 147,
+      "name": "Tập viết chữ Hán"
+    },
+    {
+      "id": 148,
+      "name": "Kỹ thuật Nhiếp Ảnh"
+    },
+    {
+      "id": 149,
+      "name": "Châu Á"
+    },
+    {
+      "id": 150,
+      "name": "Sách học tiếng hoa - khác"
+    },
+    {
+      "id": 151,
+      "name": "Luật Hôn nhân và Gia đình"
+    },
+    {
+      "id": 152,
+      "name": "Họa sĩ nổi tiếng"
+    },
+    {
+      "id": 153,
+      "name": "Phương pháp giáo dục con của người Nhật"
+    },
+    {
+      "id": 154,
+      "name": "Sách Giáo Khoa Cấp 3"
+    },
+    {
+      "id": 155,
+      "name": "Truyện cười"
+    },
+    {
+      "id": 156,
+      "name": "Luật Kinh tế"
+    },
+    {
+      "id": 157,
+      "name": "Luật Nhà nước"
+    },
+    {
+      "id": 158,
+      "name": "Truyện Tranh Đam Mỹ"
+    },
+    {
+      "id": 159,
+      "name": "Từ Điển Anh - Việt"
+    },
+    {
+      "id": 160,
+      "name": "Phương pháp giáo dục Montessori"
+    },
+    {
+      "id": 161,
+      "name": "Tarot"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Fiction",
+      "price": 15.99,
+      "stock": 45,
+      "status": "Available"
+    },
+    {
+      "id": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "price": 12.50,
+      "stock": 0,
+      "status": "Out of Stock"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@email.com",
+      "phone": "+1234567890",
+      "role": "Customer",
+      "joinedDate": "2024-01-15",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@email.com",
+      "phone": "+1234567891",
+      "role": "Customer",
+      "joinedDate": "2024-01-10",
+      "status": "Active"
+    }
+  ],
+  "sellers": [
+    {
+      "id": 1,
+      "name": "Sarah Johnson",
+      "email": "sarah.j@email.com",
+      "phone": "+1234567892",
+      "commissionRate": "15%",
+      "totalSales": 5240,
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "Mike Wilson",
+      "email": "mike.w@email.com",
+      "phone": "+1234567893",
+      "commissionRate": "12%",
+      "totalSales": 3890,
+      "status": "Active"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TXN001",
+      "customer": "John Doe",
+      "seller": "Sarah Johnson",
+      "book": "The Great Gatsby",
+      "amount": 15.99,
+      "paymentMethod": "Credit Card",
+      "date": "2024-01-15",
+      "status": "Completed"
+    },
+    {
+      "id": "TXN002",
+      "customer": "Jane Smith",
+      "seller": "Mike Wilson",
+      "book": "To Kill a Mockingbird",
+      "amount": 12.50,
+      "paymentMethod": "PayPal",
+      "date": "2024-01-14",
+      "status": "Pending"
+    },
+    {
+      "id": "TXN003",
+      "customer": "Mike Johnson",
+      "seller": "Sarah Johnson",
+      "book": "1984",
+      "amount": 13.25,
+      "paymentMethod": "Debit Card",
+      "date": "2024-01-13",
+      "status": "Completed"
+    }
+  ]
+}

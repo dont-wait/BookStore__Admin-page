@@ -4,46 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="./assert/icon/icon-big.png" />
     <title>Paperbacks</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/Admin.css">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="css/Responsive.css">
-    <link rel="icon" type="image/svg+xml" href="./assert/icon/icon-big.png" />
 
 </head>
 
 <body>
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-        <div class="sidebar-brand">
-            <h4><i class="fas fa-book"></i> <span class="nav-text">Paperbacks</span></h4>
+        <div class="sidebar__brand">
+            <h4 class="sidebar__brand-title"><i class="fas fa-book"></i> <span class="sidebar__nav-text">Paperbacks</span></h4>
         </div>
         <nav class="nav flex-column mt-3">
-            <a class="nav-link active" href="#" data-section="dashboard">
+            <a class="sidebar__nav-link active" href="#" data-section="dashboard">
                 <i class="fas fa-tachometer-alt"></i>
-                <span class="nav-text">Dashboard</span>
+                <span class="sidebar__nav-text">Dashboard</span>
             </a>
-            <a class="nav-link" href="#" data-section="categories">
+            <a class="sidebar__nav-link" href="#" data-section="categories">
                 <i class="fas fa-tags"></i>
-                <span class="nav-text">Book Categories</span>
+                <span class="sidebar__nav-text">Book Categories</span>
             </a>
-            <a class="nav-link" href="#" data-section="books">
+            <a class="sidebar__nav-link" href="#" data-section="books">
                 <i class="fas fa-book"></i>
-                <span class="nav-text">Books</span>
+                <span class="sidebar__nav-text">Books</span>
             </a>
-            <a class="nav-link" href="#" data-section="users">
+            <a class="sidebar__nav-link" href="#" data-section="users">
                 <i class="fas fa-users"></i>
-                <span class="nav-text">Users</span>
+                <span class="sidebar__nav-text">Users</span>
             </a>
-            <a class="nav-link" href="#" data-section="sellers">
+            <a class="sidebar__nav-link" href="#" data-section="sellers">
                 <i class="fas fa-user-tie"></i>
-                <span class="nav-text">Sellers</span>
+                <span class="sidebar__nav-text">Sellers</span>
             </a>
-            <a class="nav-link" href="#" data-section="transactions">
+            <a class="sidebar__nav-link" href="#" data-section="transactions">
                 <i class="fas fa-credit-card"></i>
-                <span class="nav-text">Transactions</span>
+                <span class="sidebar__nav-text">Transactions</span>
             </a>
         </nav>
     </div>
@@ -59,7 +59,7 @@
                 <span class="ms-3 h5 mb-0" id="pageTitle">Dashboard</span>
             </div>
             <div>
-                <button class="btn btn-outline-primary me-2">
+                <button class="btn btn-outline me-2">
                     <i class="fas fa-bell"></i>
                 </button>
                 <button class="btn btn-primary">
@@ -69,61 +69,10 @@
         </div>
 
         <!-- Dashboard Section -->
-        <div class="content-section active" id="dashboard">
+        <div class="content-section content-section--active" id="dashboard">
             <div class="container-fluid p-4">
                 <div class="row g-4 mb-4">
-                    <div class="col-xl-3 col-md-6">
-                        <div class="stats-card">
-                            <div class="d-flex align-items-center">
-                                <div class="stats-icon" style="background: linear-gradient(45deg, #ff6b6b, #ff8e8e);">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="mb-0">1,245</h3>
-                                    <p class="text-muted mb-0">Total Books</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="stats-card">
-                            <div class="d-flex align-items-center">
-                                <div class="stats-icon" style="background: linear-gradient(45deg, #4ecdc4, #70d7d0);">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="mb-0">892</h3>
-                                    <p class="text-muted mb-0">Total Users</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="stats-card">
-                            <div class="d-flex align-items-center">
-                                <div class="stats-icon" style="background: linear-gradient(45deg, #45b7d1, #6cc8e6);">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="mb-0">156</h3>
-                                    <p class="text-muted mb-0">Today's Sales</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6">
-                        <div class="stats-card">
-                            <div class="d-flex align-items-center">
-                                <div class="stats-icon" style="background: linear-gradient(45deg, #f7b801, #f9ca3d);">
-                                    <i class="fas fa-dollar-sign"></i>
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="mb-0">12,450</h3>
-                                    <p class="text-muted mb-0">Revenue</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Stats cards will be rendered here -->
                 </div>
 
                 <div class="row g-4">
@@ -142,27 +91,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>#TXN001</td>
-                                            <td>John Doe</td>
-                                            <td>The Great Gatsby</td>
-                                            <td>15.99</td>
-                                            <td><span class="badge bg-success">Completed</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>#TXN002</td>
-                                            <td>Jane Smith</td>
-                                            <td>To Kill a Mockingbird</td>
-                                            <td>12.50</td>
-                                            <td><span class="badge bg-warning">Pending</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>#TXN003</td>
-                                            <td>Mike Johnson</td>
-                                            <td>1984</td>
-                                            <td>$13.25</td>
-                                            <td><span class="badge bg-success">Completed</span></td>
-                                        </tr>
+                                        <!-- Recent transactions will be rendered here -->
                                     </tbody>
                                 </table>
                             </div>
@@ -172,27 +101,7 @@
                         <div class="table-container">
                             <h5 class="mb-3">Top Selling Books</h5>
                             <div class="list-group list-group-flush">
-                                <div class="list-group-item d-flex justify-content-between align-items-center border-0">
-                                    <div>
-                                        <h6 class="mb-1">The Great Gatsby</h6>
-                                        <small class="text-muted">F. Scott Fitzgerald</small>
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">145 sales</span>
-                                </div>
-                                <div class="list-group-item d-flex justify-content-between align-items-center border-0">
-                                    <div>
-                                        <h6 class="mb-1">To Kill a Mockingbird</h6>
-                                        <small class="text-muted">Harper Lee</small>
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">132 sales</span>
-                                </div>
-                                <div class="list-group-item d-flex justify-content-between align-items-center border-0">
-                                    <div>
-                                        <h6 class="mb-1">1984</h6>
-                                        <small class="text-muted">George Orwell</small>
-                                    </div>
-                                    <span class="badge bg-primary rounded-pill">118 sales</span>
-                                </div>
+                                <!-- Top selling books will be rendered here -->
                             </div>
                         </div>
                     </div>
@@ -224,51 +133,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Fiction</td>
-                                    <td>Fictional stories and novels</td>
-                                    <td>456</td>
-                                    <td><span class="badge bg-success">Active</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Non-Fiction</td>
-                                    <td>Real stories and educational content</td>
-                                    <td>234</td>
-                                    <td><span class="badge bg-success">Active</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Science Fiction</td>
-                                    <td>Futuristic and scientific stories</td>
-                                    <td>123</td>
-                                    <td><span class="badge bg-success">Active</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <!-- Categories will be rendered here -->
                             </tbody>
                         </table>
                     </div>
@@ -323,50 +188,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="bg-light rounded d-flex align-items-center justify-content-center"
-                                            style="width: 40px; height: 50px;">
-                                            <i class="fas fa-book text-muted"></i>
-                                        </div>
-                                    </td>
-                                    <td>The Great Gatsby</td>
-                                    <td>F. Scott Fitzgerald</td>
-                                    <td>Fiction</td>
-                                    <td>15.99</td>
-                                    <td>45</td>
-                                    <td><span class="badge bg-success">Available</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="bg-light rounded d-flex align-items-center justify-content-center"
-                                            style="width: 40px; height: 50px;">
-                                            <i class="fas fa-book text-muted"></i>
-                                        </div>
-                                    </td>
-                                    <td>To Kill a Mockingbird</td>
-                                    <td>Harper Lee</td>
-                                    <td>Fiction</td>
-                                    <td>$12.50</td>
-                                    <td>0</td>
-                                    <td><span class="badge bg-danger">Out of Stock</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <!-- Books will be rendered here -->
                             </tbody>
                         </table>
                     </div>
@@ -421,46 +243,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>John Doe</td>
-                                    <td>john.doe@email.com</td>
-                                    <td>+1234567890</td>
-                                    <td><span class="badge bg-info">Customer</span></td>
-                                    <td>2024-01-15</td>
-                                    <td><span class="badge bg-success">Active</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-warning me-1">
-                                            <i class="fas fa-ban"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jane Smith</td>
-                                    <td>jane.smith@email.com</td>
-                                    <td>+1234567891</td>
-                                    <td><span class="badge bg-info">Customer</span></td>
-                                    <td>2024-01-10</td>
-                                    <td><span class="badge bg-success">Active</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-warning me-1">
-                                            <i class="fas fa-ban"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <!-- Users will be rendered here -->
                             </tbody>
                         </table>
                     </div>
@@ -494,46 +277,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Sarah Johnson</td>
-                                    <td>sarah.j@email.com</td>
-                                    <td>+1234567892</td>
-                                    <td>15%</td>
-                                    <td>$5,240</td>
-                                    <td><span class="badge bg-success">Active</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-info me-1">
-                                            <i class="fas fa-chart-line"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Mike Wilson</td>
-                                    <td>mike.w@email.com</td>
-                                    <td>+1234567893</td>
-                                    <td>12%</td>
-                                    <td>$3,890</td>
-                                    <td><span class="badge bg-success">Active</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-info me-1">
-                                            <i class="fas fa-chart-line"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <!-- Sellers will be rendered here -->
                             </tbody>
                         </table>
                     </div>
@@ -594,60 +338,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>#TXN001</td>
-                                    <td>John Doe</td>
-                                    <td>Sarah Johnson</td>
-                                    <td>The Great Gatsby</td>
-                                    <td>$15.99</td>
-                                    <td>Credit Card</td>
-                                    <td>2024-01-15</td>
-                                    <td><span class="badge bg-success">Completed</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-info">
-                                            <i class="fas fa-receipt"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#TXN002</td>
-                                    <td>Jane Smith</td>
-                                    <td>Mike Wilson</td>
-                                    <td>To Kill a Mockingbird</td>
-                                    <td>$12.50</td>
-                                    <td>PayPal</td>
-                                    <td>2024-01-14</td>
-                                    <td><span class="badge bg-warning">Pending</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-info">
-                                            <i class="fas fa-receipt"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#TXN003</td>
-                                    <td>Mike Johnson</td>
-                                    <td>Sarah Johnson</td>
-                                    <td>1984</td>
-                                    <td>$13.25</td>
-                                    <td>Debit Card</td>
-                                    <td>2024-01-13</td>
-                                    <td><span class="badge bg-success">Completed</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-outline-primary me-1">
-                                            <i class="fas fa-eye"></i>
-                                        </button>
-                                        <button class="btn btn-sm btn-outline-info">
-                                            <i class="fas fa-receipt"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                                <!-- Transactions will be rendered here -->
                             </tbody>
                         </table>
                     </div>
@@ -692,7 +383,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="Admin.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 
 </html>

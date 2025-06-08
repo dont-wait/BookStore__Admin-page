@@ -7,9 +7,13 @@
     <link rel="icon" type="image/svg+xml" href="./assert/icon/icon-big.png" />
     <title>Paperbacks</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Thu vien tao table dep -->
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+    <!-- https://github.com/fiduswriter/simple-datatables -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/Admin.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/Responsive.css">
 
 </head>
@@ -18,7 +22,8 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
         <div class="sidebar__brand">
-            <h4 class="sidebar__brand-title"><i class="fas fa-book"></i> <span class="sidebar__nav-text">Paperbacks</span></h4>
+            <h4 class="sidebar__brand-title"><i class="fas fa-book"></i> <span
+                    class="sidebar__nav-text">Paperbacks</span></h4>
         </div>
         <nav class="nav flex-column mt-3">
             <a class="sidebar__nav-link active" href="#" data-section="dashboard">
@@ -37,9 +42,9 @@
                 <i class="fas fa-users"></i>
                 <span class="sidebar__nav-text">Users</span>
             </a>
-            <a class="sidebar__nav-link" href="#" data-section="sellers">
-                <i class="fas fa-user-tie"></i>
-                <span class="sidebar__nav-text">Sellers</span>
+            <a class="sidebar__nav-link" href="#" data-section="blogs">
+                <i class="fas fa-blog"></i>
+                <span class="sidebar__nav-text">Blogs</span>
             </a>
             <a class="sidebar__nav-link" href="#" data-section="transactions">
                 <i class="fas fa-credit-card"></i>
@@ -72,7 +77,7 @@
         <div class="content-section content-section--active" id="dashboard">
             <div class="container-fluid p-4">
                 <div class="row g-4 mb-4">
-                    <!-- Stats cards will be rendered here -->
+                    <!-- fetch Stats cards  -->
                 </div>
 
                 <div class="row g-4">
@@ -80,7 +85,7 @@
                         <div class="table-container">
                             <h5 class="mb-3">Recent Transactions</h5>
                             <div class="table-responsive">
-                                <table class="table table-hover">
+                                <table class="table table-hover" id="recentTransactionsTable">
                                     <thead>
                                         <tr>
                                             <th>Transaction ID</th>
@@ -91,7 +96,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- Recent transactions will be rendered here -->
+                                        <!-- fetch Recent transactions-->
                                     </tbody>
                                 </table>
                             </div>
@@ -101,7 +106,7 @@
                         <div class="table-container">
                             <h5 class="mb-3">Top Selling Books</h5>
                             <div class="list-group list-group-flush">
-                                <!-- Top selling books will be rendered here -->
+                                <!-- fetch Top selling books -->
                             </div>
                         </div>
                     </div>
@@ -121,19 +126,18 @@
 
                 <div class="table-container">
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="categoriesTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Category Name</th>
-                                    <th>Description</th>
                                     <th>Books Count</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Categories will be rendered here -->
+                                <!-- fetch Categories  -->
                             </tbody>
                         </table>
                     </div>
@@ -174,7 +178,7 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="booksTable">
                             <thead>
                                 <tr>
                                     <th>Cover</th>
@@ -188,7 +192,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Books will be rendered here -->
+                                <!-- fetch Books  -->
                             </tbody>
                         </table>
                     </div>
@@ -229,7 +233,7 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="usersTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -243,7 +247,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Users will be rendered here -->
+                                <!-- fetch Users  -->
                             </tbody>
                         </table>
                     </div>
@@ -252,32 +256,54 @@
         </div>
 
         <!-- Sellers Section -->
-        <div class="content-section" id="sellers">
+        <div class="content-section" id="blogs">
             <div class="container-fluid p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h4>Sellers Management</h4>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSellerModal">
-                        <i class="fas fa-plus"></i> Add Seller
+                    <h4>Blogs Management</h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBlogModal">
+                        <i class="fas fa-plus"></i> Add Blog
                     </button>
                 </div>
 
                 <div class="table-container">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Search blogs...">
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select">
+                                <option>All Categories</option>
+                                <option>News</option>
+                                <option>Reviews</option>
+                                <option>Guides</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select">
+                                <option>All Status</option>
+                                <option>Published</option>
+                                <option>Draft</option>
+                                <option>Archived</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="blogsTable">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Seller Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Commission Rate</th>
-                                    <th>Total Sales</th>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Category</th>
+                                    <th>Views</th>
+                                    <th>Comments</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Sellers will be rendered here -->
+                                <!-- fetch Blogs  -->
                             </tbody>
                         </table>
                     </div>
@@ -323,7 +349,7 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table class="table table-hover">
+                        <table class="table table-hover" id="transactionsTable">
                             <thead>
                                 <tr>
                                     <th>Transaction ID</th>
@@ -338,7 +364,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Transactions will be rendered here -->
+                                <!-- fetch Transactions  -->
                             </tbody>
                         </table>
                     </div>
@@ -382,8 +408,78 @@
         </div>
     </div>
 
+    <!-- Add Book Modal -->
+    <div class="modal fade" id="addBookModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Book</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addBookForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Book Title</label>
+                                <input type="text" class="form-control" name="title" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Author</label>
+                                <input type="text" class="form-control" name="author" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Category</label>
+                                <select class="form-select" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Fiction">Fiction</option>
+                                    <option value="Non-Fiction">Non-Fiction</option>
+                                    <option value="Science Fiction">Science Fiction</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Price ($)</label>
+                                <input type="number" class="form-control" name="price" min="0" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Stock</label>
+                                <input type="number" class="form-control" name="stock" min="0" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Book Cover</label>
+                                <input type="file" class="form-control" name="image" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-control" name="description" rows="3"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Book</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <div class="toast-message"></div>
+        </div>
+        <div class="toast-progress"></div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+    <script type="module" src="js/toast.js"></script>
+    <script type="module" src="js/admin.js"></script>
 </body>
 
 </html>

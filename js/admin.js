@@ -1,13 +1,242 @@
+import { showToast } from "./toast.js";
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Navigation functionality
+    const navLinks = document.querySelectorAll('.sidebar .nav-link');
+    const contentSections = document.querySelectorAll('.content-section');
+    const pageTitle = document.getElementById('pageTitle');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    const toggleSidebar = document.getElementById('toggleSidebar');
+
+    // Page titles mapping
+    const pageTitles = {
+        'dashboard': 'Dashboard',
+        'categories': 'Book Categories',
+        'books': 'Books Management',
+        'users': 'Users Management',
+        'blogs': 'Blogs Management',
+        'transactions': 'Transactions Management'
+    };
+
+    // Navigation click handler
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Remove active class from all links and sections
+            navLinks.forEach(l => l.classList.remove('active'));
+            contentSections.forEach(s => s.classList.remove('active'));
+
+            // Add active class to clicked link
+            link.classList.add('active');
+
+            // Show corresponding section
+            const sectionId = link.getAttribute('data-section');
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.add('active');
+                pageTitle.textContent = pageTitles[sectionId] || 'Dashboard';
+            }
+        });
+    });
+
+    // Sidebar toggle functionality
+    if (toggleSidebar) {
+        toggleSidebar.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('expanded');
+        });
+    }
+
+    // Responsive sidebar for mobile
+    function handleResize() {
+        if (window.innerWidth <= 768) {
+            sidebar.classList.add('collapsed');
+            mainContent.classList.add('expanded');
+        } else {
+            sidebar.classList.remove('collapsed');
+            mainContent.classList.remove('expanded');
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial call
+
+    // Add hover effects to stats cards
+    const statsCards = document.querySelectorAll('.stats-card');
+    statsCards.forEach(card => {
+        card.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-5px)';
+        });
+        card.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Status badge click handlers
+    const statusBadges = document.querySelectorAll('.badge');
+    statusBadges.forEach(badge => {
+        badge.addEventListener('click', function () {
+            console.log('Status clicked:', this.textContent);
+        });
+    });
+
+    // Initialize the dashboard
+    initializeDashboard();
+});
+
 // Fetch data from db.json
 async function fetchData() {
     try {
         const response = await fetch('db.json');
         const data = await response.json();
+        showToast("Gọi dữ liệu thành công");
         return data;
     } catch (error) {
-        console.error('Error fetching data:', error);
+        showToast("Gọi dữ liệu không thành công");
         return null;
     }
+}
+
+// Initialize DataTables
+function initializeDataTables() {
+    // Common options for all tables
+    const commonOptions = {
+        searchable: true,
+        fixedHeight: true,
+        perPage: 10,
+        perPageSelect: [5, 10, 15, 20, 25],
+        labels: {
+            placeholder: "Search...",
+            perPage: "Show ${select} entries",
+            noRows: "No data to display",
+            info: "Showing {start} to {end} of {rows} entries"
+        },
+        layout: {
+            top: "{search}",
+            bottom: "{info}{pager}"
+        }
+    };
+
+    // Function to scroll table to top with smooth animation
+    const scrollTableToTop = (tableId) => {
+        const tableContainer = document.querySelector(`#${tableId}`).closest('.table-container');
+        if (tableContainer) {
+            const tableResponsive = tableContainer.querySelector('.table-responsive');
+            if (tableResponsive) {
+                const scrollToTop = () => {
+                    const currentScroll = tableResponsive.scrollTop;
+                    if (currentScroll > 0) {
+                        tableResponsive.scrollTop = currentScroll - Math.max(currentScroll / 10, 10);
+                        requestAnimationFrame(scrollToTop);
+                    }
+                };
+                scrollToTop();
+            }
+        }
+    };
+
+    // Initialize DataTable for Recent Transactions
+    const recentTransactionsTable = document.getElementById('recentTransactionsTable');
+    if (recentTransactionsTable) {
+        new simpleDatatables.DataTable("#recentTransactionsTable", {
+            ...commonOptions,
+            columns: [
+                { select: 0, sort: "desc" },
+                { select: 3, sort: "desc" },
+                { select: 4, sort: "asc" }
+            ]
+        }).on('datatable.page', () => scrollTableToTop('recentTransactionsTable'));
+    }
+
+    // Initialize DataTable for Categories
+    const categoriesTable = document.getElementById('categoriesTable');
+    if (categoriesTable) {
+        new simpleDatatables.DataTable("#categoriesTable", {
+            ...commonOptions,
+            columns: [
+                { select: 0, sort: "asc" },
+                { select: 1, sort: "asc" },
+                { select: 3, sort: "desc" }
+            ]
+        }).on('datatable.page', () => scrollTableToTop('categoriesTable'));
+    }
+
+    // Initialize DataTable for Books
+    const booksTable = document.getElementById('booksTable');
+    if (booksTable) {
+        new simpleDatatables.DataTable("#booksTable", {
+            ...commonOptions,
+            columns: [
+                { select: 1, sort: "asc" },
+                { select: 2, sort: "asc" },
+                { select: 4, sort: "desc" },
+                { select: 5, sort: "desc" }
+            ]
+        }).on('datatable.page', () => scrollTableToTop('booksTable'));
+    }
+
+    // Initialize DataTable for Users
+    const usersTable = document.getElementById('usersTable');
+    if (usersTable) {
+        new simpleDatatables.DataTable("#usersTable", {
+            ...commonOptions,
+            columns: [
+                { select: 0, sort: "asc" },
+                { select: 1, sort: "asc" },
+                { select: 5, sort: "desc" }
+            ]
+        }).on('datatable.page', () => scrollTableToTop('usersTable'));
+    }
+
+    // Initialize DataTable for Blogs
+    const blogsTable = document.getElementById('blogsTable');
+    if (blogsTable) {
+        new simpleDatatables.DataTable("#blogsTable", {
+            ...commonOptions,
+            columns: [
+                { select: 0, sort: "asc" },
+                { select: 1, sort: "asc" },
+                { select: 4, sort: "desc" }
+            ]
+        }).on('datatable.page', () => scrollTableToTop('blogsTable'));
+    }
+
+    // Initialize DataTable for Transactions
+    const transactionsTable = document.getElementById('transactionsTable');
+    if (transactionsTable) {
+        new simpleDatatables.DataTable("#transactionsTable", {
+            ...commonOptions,
+            columns: [
+                { select: 0, sort: "desc" },
+                { select: 4, sort: "desc" },
+                { select: 6, sort: "desc" }
+            ]
+        }).on('datatable.page', () => scrollTableToTop('transactionsTable'));
+    }
+}
+
+// Initialize the dashboard
+async function initializeDashboard() {
+    const data = await fetchData();
+    if (!data) return;
+
+    // Render dashboard data
+    renderDashboardStats(data.dashboard.stats);
+    renderRecentTransactions(data.dashboard.recentTransactions);
+    renderTopSellingBooks(data.dashboard.topSellingBooks);
+
+    // Render other sections
+    renderCategories(data.categories);
+    renderBooks(data.books);
+    renderUsers(data.users);
+    renderBlogs(data.blogs);
+    renderTransactions(data.transactions);
+
+    // Initialize DataTables after rendering data
+    initializeDataTables();
 }
 
 // Render dashboard stats
@@ -32,7 +261,9 @@ function renderDashboardStats(stats) {
 
 // Render recent transactions
 function renderRecentTransactions(transactions) {
-    const tbody = document.querySelector('#dashboard .table-responsive tbody');
+    const tbody = document.querySelector('#recentTransactionsTable tbody');
+    if (!tbody) return;
+    
     tbody.innerHTML = transactions.map(tx => `
         <tr>
             <td>#${tx.id}</td>
@@ -47,6 +278,8 @@ function renderRecentTransactions(transactions) {
 // Render top selling books
 function renderTopSellingBooks(books) {
     const listGroup = document.querySelector('#dashboard .list-group');
+    if (!listGroup) return;
+    
     listGroup.innerHTML = books.map(book => `
         <div class="list-group-item d-flex justify-content-between align-items-center border-0">
             <div>
@@ -60,29 +293,38 @@ function renderTopSellingBooks(books) {
 
 // Render categories
 function renderCategories(categories) {
-    const tbody = document.querySelector('#categories .table-responsive tbody');
-    tbody.innerHTML = categories.map(category => `
-        <tr>
-            <td>${category.id}</td>
-            <td>${category.name}</td>
-            <td>${category.description}</td>
-            <td>${category.booksCount}</td>
-            <td><span class="badge bg-success">${category.status}</span></td>
-            <td>
-                <button class="btn btn-sm btn-outline-primary me-1">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-danger">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </td>
-        </tr>
-    `).join('');
+    const tbody = document.querySelector('#categoriesTable tbody');
+    if (!tbody) return;
+    
+    tbody.innerHTML = categories.map(category => {
+        let badgeClass = 'bg-secondary';
+        if (category.status === 'Active') badgeClass = 'bg-success';
+        else if (category.status === 'Out of stock') badgeClass = 'bg-danger';
+        else if (category.status === 'Incoming stock') badgeClass = 'bg-warning';
+        return `
+            <tr>
+                <td>${category.id}</td>
+                <td>${category.name}</td>
+                <td>${category.booksCount}</td>
+                <td><span class="badge ${badgeClass}">${category.status}</span></td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary me-1">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        `;
+    }).join('');
 }
 
 // Render books
 function renderBooks(books) {
-    const tbody = document.querySelector('#books .table-responsive tbody');
+    const tbody = document.querySelector('#booksTable tbody');
+    if (!tbody) return;
+    
     tbody.innerHTML = books.map(book => `
         <tr>
             <td>
@@ -111,49 +353,63 @@ function renderBooks(books) {
 
 // Render users
 function renderUsers(users) {
-    const tbody = document.querySelector('#users .table-responsive tbody');
-    tbody.innerHTML = users.map(user => `
-        <tr>
-            <td>${user.id}</td>
-            <td>${user.name}</td>
-            <td>${user.email}</td>
-            <td>${user.phone}</td>
-            <td><span class="badge bg-info">${user.role}</span></td>
-            <td>${user.joinedDate}</td>
-            <td><span class="badge bg-success">${user.status}</span></td>
-            <td>
-                <button class="btn btn-sm btn-outline-primary me-1">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-warning me-1">
-                    <i class="fas fa-ban"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-danger">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </td>
-        </tr>
-    `).join('');
+    const tbody = document.querySelector('#usersTable tbody');
+    if (!tbody) return;
+    
+    tbody.innerHTML = users.map(user => {
+        // Determine badge class based on status
+        let badgeClass = 'bg-success'; // Default for Active
+        if (user.status === 'Suspended') {
+            badgeClass = 'bg-danger';
+        } else if (user.status === 'Inactive') {
+            badgeClass = 'bg-warning';
+        }
+
+        return `
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.phone}</td>
+                <td><span class="badge bg-info">${user.role}</span></td>
+                <td>${user.joinedDate}</td>
+                <td><span class="badge ${badgeClass}">${user.status}</span></td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary me-1">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-warning me-1">
+                        <i class="fas fa-ban"></i>
+                    </button>
+                    <button class="btn btn-sm btn-outline-danger">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        `;
+    }).join('');
 }
 
-// Render sellers
-function renderSellers(sellers) {
-    const tbody = document.querySelector('#sellers .table-responsive tbody');
-    tbody.innerHTML = sellers.map(seller => `
+// Render blogs
+function renderBlogs(blogs) {
+    const tbody = document.querySelector('#blogsTable tbody');
+    if (!tbody) return;
+    
+    tbody.innerHTML = blogs.map(blog => `
         <tr>
-            <td>${seller.id}</td>
-            <td>${seller.name}</td>
-            <td>${seller.email}</td>
-            <td>${seller.phone}</td>
-            <td>${seller.commissionRate}</td>
-            <td>$${seller.totalSales.toLocaleString()}</td>
-            <td><span class="badge bg-success">${seller.status}</span></td>
+            <td>${blog.id}</td>
+            <td>${blog.title}</td>
+            <td>${blog.author}</td>
+            <td>${blog.category}</td>
+            <td>${blog.views}</td>
+            <td>${blog.comments}</td>
+            <td><span class="badge bg-${blog.status === 'Published' ? 'success' : blog.status === 'Draft' ? 'warning' : 'secondary'}">${blog.status}</span></td>
             <td>
                 <button class="btn btn-sm btn-outline-primary me-1">
                     <i class="fas fa-edit"></i>
                 </button>
                 <button class="btn btn-sm btn-outline-info me-1">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-eye"></i>
                 </button>
                 <button class="btn btn-sm btn-outline-danger">
                     <i class="fas fa-trash"></i>
@@ -165,7 +421,9 @@ function renderSellers(sellers) {
 
 // Render transactions
 function renderTransactions(transactions) {
-    const tbody = document.querySelector('#transactions .table-responsive tbody');
+    const tbody = document.querySelector('#transactionsTable tbody');
+    if (!tbody) return;
+    
     tbody.innerHTML = transactions.map(tx => `
         <tr>
             <td>#${tx.id}</td>
@@ -186,24 +444,6 @@ function renderTransactions(transactions) {
             </td>
         </tr>
     `).join('');
-}
-
-// Initialize the dashboard
-async function initializeDashboard() {
-    const data = await fetchData();
-    if (!data) return;
-
-    // Render dashboard data
-    renderDashboardStats(data.dashboard.stats);
-    renderRecentTransactions(data.dashboard.recentTransactions);
-    renderTopSellingBooks(data.dashboard.topSellingBooks);
-
-    // Render other sections
-    renderCategories(data.categories);
-    renderBooks(data.books);
-    renderUsers(data.users);
-    renderSellers(data.sellers);
-    renderTransactions(data.transactions);
 }
 
 // Navigation handling
@@ -231,5 +471,104 @@ document.getElementById('toggleSidebar').addEventListener('click', () => {
     document.getElementById('mainContent').classList.toggle('main-content--expanded');
 });
 
-// Initialize the dashboard when the page loads
-document.addEventListener('DOMContentLoaded', initializeDashboard); 
+// Validate book data
+function validateBook(bookData) {
+    // Validate title
+    if (!bookData.title || bookData.title.trim().length < 3) {
+        showToast("Tên sách phải có ít nhất 3 ký tự", "error");
+        return false;
+    }
+
+    // Validate author
+    if (!bookData.author || bookData.author.trim().length < 2) {
+        showToast("Tên tác giả phải có ít nhất 2 ký tự", "error");
+        return false;
+    }
+
+    // Validate category
+    if (!bookData.category) {
+        showToast("Vui lòng chọn danh mục sách", "error");
+        return false;
+    }
+
+    // Validate price
+    if (!bookData.price || isNaN(bookData.price) || bookData.price <= 0) {
+        showToast("Giá sách phải lớn hơn 0", "error");
+        return false;
+    }
+
+    // Validate stock
+    if (!bookData.stock || isNaN(bookData.stock) || bookData.stock < 0) {
+        showToast("Số lượng sách không được âm", "error");
+        return false;
+    }
+
+    // Validate image
+    if (bookData.image) {
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+        const maxSize = 5 * 1024 * 1024; // 5MB
+
+        if (!allowedTypes.includes(bookData.image.type)) {
+            showToast("Chỉ chấp nhận file ảnh (JPG, JPEG, PNG)", "error");
+            return false;
+        }
+
+        if (bookData.image.size > maxSize) {
+            showToast("Kích thước ảnh không được vượt quá 5MB", "error");
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// Add new book
+async function addBook(bookData) {
+    try {
+        // Validate book data
+        if (!validateBook(bookData)) {
+            return false;
+        }
+
+        // Create new book object
+        const newBook = {
+            title: bookData.title.trim(),
+            author: bookData.author.trim(),
+            category: bookData.category,
+            price: parseFloat(bookData.price),
+            stock: parseInt(bookData.stock),
+            status: bookData.stock > 0 ? "Available" : "Out of Stock"
+        };
+
+        // Show success message
+        showToast("Thêm sách thành công!");
+        
+        // Reset form and close modal
+        document.getElementById('addBookForm').reset();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('addBookModal'));
+        modal.hide();
+
+        return true;
+    } catch (error) {
+        showToast("Có lỗi xảy ra khi thêm sách", "error");
+        console.error('Error adding book:', error);
+        return false;
+    }
+}
+
+// Handle add book form submission
+document.getElementById('addBookForm')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const bookData = {
+        title: formData.get('title'),
+        author: formData.get('author'),
+        category: formData.get('category'),
+        price: formData.get('price'),
+        stock: formData.get('stock'),
+        image: formData.get('image')
+    };
+
+    await addBook(bookData);
+}); 

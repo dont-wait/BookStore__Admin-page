@@ -10,4 +10,29 @@
     .nav-text {
         display: none;
     }
-}
+
+        .sidebar {
+            width: 4.375rem;
+        }
+        
+        .main-content {
+            margin-left: 4.375rem;
+        }
+        
+        .sidebar__nav-text {
+            display: none;
+        }
+        
+        .sidebar__brand-title {
+            display: none;
+        }
+        
+        .table-responsive {
+            max-height: 40vh;
+        }
+        .table thead th, .table tbody td {
+            font-size: 0.95rem;
+            padding: 0.5rem;
+        }
+    }
+

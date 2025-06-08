@@ -74,7 +74,7 @@
       }
     ]
   },
-  "categories": [
+  "categoriesV2": [
     {
       "id": 1,
       "name": "Fiction",
@@ -97,650 +97,972 @@
       "status": "Active"
     }
   ],
-  "categoriesV2": [
+  "categories": [
     {
       "id": 1,
-      "name": "Kỹ năng Quản lý cảm xúc"
+      "name": "Kỹ năng Quản lý cảm xúc",
+      "booksCount": 56,
+      "status": "Active"
     },
     {
       "id": 2,
-      "name": "Sách Tôn Giáo - Tâm Linh"
+      "name": "Sách Tôn Giáo - Tâm Linh",
+      "booksCount": 72,
+      "status": "Active"
     },
     {
       "id": 3,
-      "name": "Sách quản trị, lãnh đạo"
+      "name": "Sách quản trị, lãnh đạo",
+      "booksCount": 44,
+      "status": "Active"
     },
     {
       "id": 4,
-      "name": "Sách tư duy - Kỹ năng sống"
+      "name": "Sách tư duy - Kỹ năng sống",
+      "booksCount": 143,
+      "status": "Active"
     },
     {
       "id": 5,
-      "name": "Tài chính cá nhân"
+      "name": "Tài chính cá nhân",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 6,
-      "name": "Văn học thiếu nhi"
+      "name": "Văn học thiếu nhi",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 7,
-      "name": "Lịch Sử Việt Nam"
+      "name": "Lịch Sử Việt Nam",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 8,
-      "name": "Danh nhân Việt Nam"
+      "name": "Danh nhân Việt Nam",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 9,
-      "name": "Triết học"
+      "name": "Triết học",
+      "booksCount": 2,
+      "status": "Active"
     },
     {
       "id": 10,
-      "name": "Sách Tô Màu Dành Cho Người Lớn"
+      "name": "Sách Tô Màu Dành Cho Người Lớn",
+      "booksCount": 93,
+      "status": "Active"
     },
     {
       "id": 11,
-      "name": "Tiểu sử - Hồi ký"
+      "name": "Tiểu sử - Hồi ký",
+      "booksCount": 69,
+      "status": "Active"
     },
     {
       "id": 12,
-      "name": "Kỹ Năng Giao Tiếp"
+      "name": "Kỹ Năng Giao Tiếp",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 13,
-      "name": "Sách kỹ năng làm việc"
+      "name": "Sách kỹ năng làm việc",
+      "booksCount": 73,
+      "status": "Active"
     },
     {
       "id": 14,
-      "name": "Sách tâm lý học - khác"
+      "name": "Sách tâm lý học - khác",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 15,
-      "name": "Bài học kinh doanh"
+      "name": "Bài học kinh doanh",
+      "booksCount": 24,
+      "status": "Active"
     },
     {
       "id": 16,
-      "name": "Luật Đất đai"
+      "name": "Luật Đất đai",
+      "booksCount": 106,
+      "status": "Active"
     },
     {
       "id": 17,
-      "name": "Tác Phẩm Kinh Điển Nước Ngoài"
+      "name": "Tác Phẩm Kinh Điển Nước Ngoài",
+      "booksCount": 34,
+      "status": "Active"
     },
     {
       "id": 18,
-      "name": "Truyện dài"
+      "name": "Truyện dài",
+      "booksCount": 89,
+      "status": "Active"
     },
     {
       "id": 19,
-      "name": "Đạo đức - Kỹ năng sống"
+      "name": "Đạo đức - Kỹ năng sống",
+      "booksCount": 7,
+      "status": "Active"
     },
     {
       "id": 20,
-      "name": "Lĩnh vực khác"
+      "name": "Lĩnh vực khác",
+      "booksCount": 132,
+      "status": "Active"
     },
     {
       "id": 21,
-      "name": "Truyện ngắn - Tản văn - Tạp Văn Nước Ngoài"
+      "name": "Truyện ngắn - Tản văn - Tạp Văn Nước Ngoài",
+      "booksCount": 12,
+      "status": "Active"
     },
     {
       "id": 22,
-      "name": "Nghệ thuật sống"
+      "name": "Nghệ thuật sống",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 23,
-      "name": "Tác Phẩm Kinh Điển Việt Nam"
+      "name": "Tác Phẩm Kinh Điển Việt Nam",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 24,
-      "name": "Truyện ngắn - Tản văn - Tạp Văn Việt Nam"
+      "name": "Truyện ngắn - Tản văn - Tạp Văn Việt Nam",
+      "booksCount": 34,
+      "status": "Active"
     },
     {
       "id": 25,
-      "name": "Tiểu Thuyết Phương Tây"
+      "name": "Tiểu Thuyết Phương Tây",
+      "booksCount": 90,
+      "status": "Active"
     },
     {
       "id": 26,
-      "name": "Truyện Giả tưởng - Huyền Bí - Phiêu Lưu"
+      "name": "Truyện Giả tưởng - Huyền Bí - Phiêu Lưu",
+      "booksCount": 40,
+      "status": "Active"
     },
     {
       "id": 27,
-      "name": "Cẩm nang làm cha mẹ"
+      "name": "Cẩm nang làm cha mẹ",
+      "booksCount": 31,
+      "status": "Active"
     },
     {
       "id": 28,
-      "name": "Sách kinh tế học - khác"
+      "name": "Sách kinh tế học - khác",
+      "booksCount": 110,
+      "status": "Active"
     },
     {
       "id": 29,
-      "name": "Truyện Tranh, Manga, Comic"
+      "name": "Truyện Tranh, Manga, Comic",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 30,
-      "name": "Lịch Sử Thế Giới"
+      "name": "Lịch Sử Thế Giới",
+      "booksCount": 95,
+      "status": "Active"
     },
     {
       "id": 31,
-      "name": "Tiểu Thuyết Phương Đông"
+      "name": "Tiểu Thuyết Phương Đông",
+      "booksCount": 64,
+      "status": "Active"
     },
     {
       "id": 32,
-      "name": "Truyện trinh thám"
+      "name": "Truyện trinh thám",
+      "booksCount": 65,
+      "status": "Active"
     },
     {
       "id": 33,
-      "name": "Truyện kể cho bé"
+      "name": "Truyện kể cho bé",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 34,
-      "name": "Sách Y Học Khác"
+      "name": "Sách Y Học Khác",
+      "booksCount": 124,
+      "status": "Active"
     },
     {
       "id": 35,
-      "name": "1980Books"
+      "name": "1980Books",
+      "booksCount": 48,
+      "status": "Active"
     },
     {
       "id": 36,
-      "name": "Sách giáo dục"
+      "name": "Sách giáo dục",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 37,
-      "name": "Sách Marketing - Bán hàng"
+      "name": "Sách Marketing - Bán hàng",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 38,
-      "name": "Kỹ Thuật khác"
+      "name": "Kỹ Thuật khác",
+      "booksCount": 120,
+      "status": "Active"
     },
     {
       "id": 39,
-      "name": "Sách hướng nghiệp"
+      "name": "Sách hướng nghiệp",
+      "booksCount": 105,
+      "status": "Active"
     },
     {
       "id": 40,
-      "name": "Kiến thức - Bách khoa"
+      "name": "Kiến thức - Bách khoa",
+      "booksCount": 75,
+      "status": "Active"
     },
     {
       "id": 41,
-      "name": "Tôn Giáo - Tâm Linh Khác"
+      "name": "Tôn Giáo - Tâm Linh Khác",
+      "booksCount": 58,
+      "status": "Active"
     },
     {
       "id": 42,
-      "name": "Sách chiêm tinh - horoscope - khác"
+      "name": "Sách chiêm tinh - horoscope - khác",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 43,
-      "name": "Triết Học phương Tây"
+      "name": "Triết Học phương Tây",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 44,
-      "name": "Sách Tâm Lý Tuổi Teen"
+      "name": "Sách Tâm Lý Tuổi Teen",
+      "booksCount": 28,
+      "status": "Active"
     },
     {
       "id": 45,
-      "name": "Sách Y Học Hiện Đại"
+      "name": "Sách Y Học Hiện Đại",
+      "booksCount": 123,
+      "status": "Active"
     },
     {
       "id": 46,
-      "name": "Sách tham khảo cấp I"
+      "name": "Sách tham khảo cấp I",
+      "booksCount": 71,
+      "status": "Active"
     },
     {
       "id": 47,
-      "name": "Truyện ngôn tình"
+      "name": "Truyện ngôn tình",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 48,
-      "name": "Sách Phong Tục - Tập Quán Việt Nam"
+      "name": "Sách Phong Tục - Tập Quán Việt Nam",
+      "booksCount": 90,
+      "status": "Active"
     },
     {
       "id": 49,
-      "name": "Truyện kinh dị"
+      "name": "Truyện kinh dị",
+      "booksCount": 46,
+      "status": "Active"
     },
     {
       "id": 50,
-      "name": "Kế toán"
+      "name": "Kế toán",
+      "booksCount": 48,
+      "status": "Active"
     },
     {
       "id": 51,
-      "name": "Luyện thi Tiếng Hoa HSK"
+      "name": "Luyện thi Tiếng Hoa HSK",
+      "booksCount": 70,
+      "status": "Active"
     },
     {
       "id": 52,
-      "name": "Sách Y Học Cổ Truyền"
+      "name": "Sách Y Học Cổ Truyền",
+      "booksCount": 119,
+      "status": "Active"
     },
     {
       "id": 53,
-      "name": "Sách khởi nghiệp"
+      "name": "Sách khởi nghiệp",
+      "booksCount": 87,
+      "status": "Active"
     },
     {
       "id": 54,
-      "name": "Đầu tư"
+      "name": "Đầu tư",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 55,
-      "name": "Sách Học Tiếng Anh"
+      "name": "Sách Học Tiếng Anh",
+      "booksCount": 145,
+      "status": "Active"
     },
     {
       "id": 56,
-      "name": "Sách doanh nhân"
+      "name": "Sách doanh nhân",
+      "booksCount": 99,
+      "status": "Active"
     },
     {
       "id": 57,
-      "name": "Triết Học phương Đông"
+      "name": "Triết Học phương Đông",
+      "booksCount": 102,
+      "status": "Active"
     },
     {
       "id": 58,
-      "name": "Kiến Thức Bách Khoa"
+      "name": "Kiến Thức Bách Khoa",
+      "booksCount": 108,
+      "status": "Active"
     },
     {
       "id": 59,
-      "name": "Sách quản trị nhân lực"
+      "name": "Sách quản trị nhân lực",
+      "booksCount": 106,
+      "status": "Active"
     },
     {
       "id": 60,
-      "name": "Tiếng Hoa Giao Tiếp"
+      "name": "Tiếng Hoa Giao Tiếp",
+      "booksCount": 80,
+      "status": "Active"
     },
     {
       "id": 61,
-      "name": "Sách học tiếng anh - khác"
+      "name": "Sách học tiếng anh - khác",
+      "booksCount": 150,
+      "status": "Active"
     },
     {
       "id": 62,
-      "name": "Sách tham khảo cấp III"
+      "name": "Sách tham khảo cấp III",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 63,
-      "name": "Sách tài chính - khác"
+      "name": "Sách tài chính - khác",
+      "booksCount": 38,
+      "status": "Active"
     },
     {
       "id": 64,
-      "name": "Giáo trình Hán ngữ"
+      "name": "Giáo trình Hán ngữ",
+      "booksCount": 129,
+      "status": "Active"
     },
     {
       "id": 65,
-      "name": "Sách Chữa Lành"
+      "name": "Sách Chữa Lành",
+      "booksCount": 113,
+      "status": "Active"
     },
     {
       "id": 66,
-      "name": "Sách tham khảo cấp II"
+      "name": "Sách tham khảo cấp II",
+      "booksCount": 14,
+      "status": "Active"
     },
     {
       "id": 67,
-      "name": "Danh nhân Nước Ngoài"
+      "name": "Danh nhân Nước Ngoài",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 68,
-      "name": "Sách ăn dặm cho bé"
+      "name": "Sách ăn dặm cho bé",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 69,
-      "name": "Tiếng Anh giao tiếp"
+      "name": "Tiếng Anh giao tiếp",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 70,
-      "name": "Ngữ pháp Tiếng Anh"
+      "name": "Ngữ pháp Tiếng Anh",
+      "booksCount": 17,
+      "status": "Active"
     },
     {
       "id": 71,
-      "name": "Yoga"
+      "name": "Yoga",
+      "booksCount": 88,
+      "status": "Active"
     },
     {
       "id": 72,
-      "name": "Thai giáo"
+      "name": "Thai giáo",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 73,
-      "name": "Phong Thủy"
+      "name": "Phong Thủy",
+      "booksCount": 4,
+      "status": "Active"
     },
     {
       "id": 74,
-      "name": "Truyện tranh thiếu nhi"
+      "name": "Truyện tranh thiếu nhi",
+      "booksCount": 128,
+      "status": "Active"
     },
     {
       "id": 75,
-      "name": "Chăm sóc sức khỏe em bé"
+      "name": "Chăm sóc sức khỏe em bé",
+      "booksCount": 142,
+      "status": "Active"
     },
     {
       "id": 76,
-      "name": "Sách chuyển động -Tương tác"
+      "name": "Sách chuyển động -Tương tác",
+      "booksCount": 59,
+      "status": "Active"
     },
     {
       "id": 77,
-      "name": "Sách Nấu ăn"
+      "name": "Sách Nấu ăn",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 78,
-      "name": "Tử Vi"
+      "name": "Tử Vi",
+      "booksCount": 91,
+      "status": "Active"
     },
     {
       "id": 79,
-      "name": "Tác phẩm kinh điển"
+      "name": "Tác phẩm kinh điển",
+      "booksCount": 75,
+      "status": "Active"
     },
     {
       "id": 80,
-      "name": "Phê Bình - Lý Luận Văn Học"
+      "name": "Phê Bình - Lý Luận Văn Học",
+      "booksCount": 150,
+      "status": "Active"
     },
     {
       "id": 81,
-      "name": "Luật Dân sự"
+      "name": "Luật Dân sự",
+      "booksCount": 54,
+      "status": "Active"
     },
     {
       "id": 82,
-      "name": "Kỹ Năng Khác"
+      "name": "Kỹ Năng Khác",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 83,
-      "name": "Kinh tế chính trị"
+      "name": "Kinh tế chính trị",
+      "booksCount": 3,
+      "status": "Active"
     },
     {
       "id": 84,
-      "name": "Tiền kỹ thuật số"
+      "name": "Tiền kỹ thuật số",
+      "booksCount": 24,
+      "status": "Active"
     },
     {
       "id": 85,
-      "name": "Luật Tố tụng dân sự"
+      "name": "Luật Tố tụng dân sự",
+      "booksCount": 25,
+      "status": "Active"
     },
     {
       "id": 86,
-      "name": "Truyện Chữ cổ tích - Ngụ ngôn"
+      "name": "Truyện Chữ cổ tích - Ngụ ngôn",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 87,
-      "name": "Luyện thi IELTS"
+      "name": "Luyện thi IELTS",
+      "booksCount": 1,
+      "status": "Active"
     },
     {
       "id": 88,
-      "name": "Bút Ký - Tự Truyện"
+      "name": "Bút Ký - Tự Truyện",
+      "booksCount": 35,
+      "status": "Active"
     },
     {
       "id": 89,
-      "name": "Truyện Chữ Đam Mỹ"
+      "name": "Truyện Chữ Đam Mỹ",
+      "booksCount": 13,
+      "status": "Active"
     },
     {
       "id": 90,
-      "name": "Từ Vựng Tiếng Anh"
+      "name": "Từ Vựng Tiếng Anh",
+      "booksCount": 31,
+      "status": "Active"
     },
     {
       "id": 91,
-      "name": "Chính trị đảng phái"
+      "name": "Chính trị đảng phái",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 92,
-      "name": "Chạy bộ"
+      "name": "Chạy bộ",
+      "booksCount": 22,
+      "status": "Active"
     },
     {
       "id": 93,
-      "name": "Sách ảnh"
+      "name": "Sách ảnh",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 94,
-      "name": "Truyện cổ tích"
+      "name": "Truyện cổ tích",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 95,
-      "name": "Kỹ sư - Điện tử - Công nghệ thông tin"
+      "name": "Kỹ sư - Điện tử - Công nghệ thông tin",
+      "booksCount": 11,
+      "status": "Active"
     },
     {
       "id": 96,
-      "name": "Tạp Chí - Catalogue"
+      "name": "Tạp Chí - Catalogue",
+      "booksCount": 1,
+      "status": "Active"
     },
     {
       "id": 97,
-      "name": "Sách khoa học"
+      "name": "Sách khoa học",
+      "booksCount": 40,
+      "status": "Active"
     },
     {
       "id": 98,
-      "name": "Sách Kiến Thức - Kỹ Năng Cho Trẻ"
+      "name": "Sách Kiến Thức - Kỹ Năng Cho Trẻ",
+      "booksCount": 115,
+      "status": "Active"
     },
     {
       "id": 99,
-      "name": "Ngữ pháp Tiếng Nhật"
+      "name": "Ngữ pháp Tiếng Nhật",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 100,
-      "name": "Thể dục - thể thao - khác"
+      "name": "Thể dục - thể thao - khác",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 101,
-      "name": "Luyện thi TOEFL"
+      "name": "Luyện thi TOEFL",
+      "booksCount": 133,
+      "status": "Active"
     },
     {
       "id": 102,
-      "name": "Luyện thi TOEIC"
+      "name": "Luyện thi TOEIC",
+      "booksCount": 105,
+      "status": "Active"
     },
     {
       "id": 103,
-      "name": "An toàn & Sơ cứu"
+      "name": "An toàn & Sơ cứu",
+      "booksCount": 88,
+      "status": "Active"
     },
     {
       "id": 104,
-      "name": "Light novel"
+      "name": "Light novel",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 105,
-      "name": "Truyện tranh Ehon"
+      "name": "Truyện tranh Ehon",
+      "booksCount": 145,
+      "status": "Active"
     },
     {
       "id": 106,
-      "name": "Truyện ngắn - Tản văn - Tạp Văn"
+      "name": "Truyện ngắn - Tản văn - Tạp Văn",
+      "booksCount": 70,
+      "status": "Active"
     },
     {
       "id": 107,
-      "name": "Kinh tế vi mô"
+      "name": "Kinh tế vi mô",
+      "booksCount": 122,
+      "status": "Active"
     },
     {
       "id": 108,
-      "name": "Tài chính doanh nghiệp"
+      "name": "Tài chính doanh nghiệp",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 109,
-      "name": "Thẻ luyện thi"
+      "name": "Thẻ luyện thi",
+      "booksCount": 140,
+      "status": "Active"
     },
     {
       "id": 110,
-      "name": "Sách Hôn Nhân - Giới Tính"
+      "name": "Sách Hôn Nhân - Giới Tính",
+      "booksCount": 134,
+      "status": "Active"
     },
     {
       "id": 111,
-      "name": "Kinh Dịch Học"
+      "name": "Kinh Dịch Học",
+      "booksCount": 95,
+      "status": "Active"
     },
     {
       "id": 112,
-      "name": "Lập Trình"
+      "name": "Lập Trình",
+      "booksCount": 93,
+      "status": "Active"
     },
     {
       "id": 113,
-      "name": "Mỹ thuật - Kiến trúc Thế giới"
+      "name": "Mỹ thuật - Kiến trúc Thế giới",
+      "booksCount": 77,
+      "status": "Active"
     },
     {
       "id": 114,
-      "name": "Ngoại Ngữ Khác"
+      "name": "Ngoại Ngữ Khác",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 115,
-      "name": "Phóng Sự - Ký Sự"
+      "name": "Phóng Sự - Ký Sự",
+      "booksCount": 123,
+      "status": "Active"
     },
     {
       "id": 116,
-      "name": "Sách Y Học"
+      "name": "Sách Y Học",
+      "booksCount": 18,
+      "status": "Active"
     },
     {
       "id": 117,
-      "name": "Sức khỏe tinh thần"
+      "name": "Sức khỏe tinh thần",
+      "booksCount": 59,
+      "status": "Active"
     },
     {
       "id": 118,
-      "name": "Tranh Truyện"
+      "name": "Tranh Truyện",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 119,
-      "name": "Công Giáo"
+      "name": "Công Giáo",
+      "booksCount": 3,
+      "status": "Active"
     },
     {
       "id": 120,
-      "name": "Kinh tế - Tài chính - Quản trị"
+      "name": "Kinh tế - Tài chính - Quản trị",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 121,
-      "name": "Ca Dao"
+      "name": "Ca Dao",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 122,
-      "name": "Triết học khác"
+      "name": "Triết học khác",
+      "booksCount": 146,
+      "status": "Active"
     },
     {
       "id": 123,
-      "name": "Sách Giáo Khoa Cấp 1"
+      "name": "Sách Giáo Khoa Cấp 1",
+      "booksCount": 38,
+      "status": "Active"
     },
     {
       "id": 124,
-      "name": "Âm nhạc - điện ảnh - khác"
+      "name": "Âm nhạc - điện ảnh - khác",
+      "booksCount": 89,
+      "status": "Active"
     },
     {
       "id": 125,
-      "name": "Dinh dưỡng thai kỳ"
+      "name": "Dinh dưỡng thai kỳ",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 126,
-      "name": "Chiêm Tinh Học"
+      "name": "Chiêm Tinh Học",
+      "booksCount": 144,
+      "status": "Active"
     },
     {
       "id": 127,
-      "name": "Sách kinh tế học"
+      "name": "Sách kinh tế học",
+      "booksCount": 92,
+      "status": "Active"
     },
     {
       "id": 128,
-      "name": "Sách học Đàn Piano"
+      "name": "Sách học Đàn Piano",
+      "booksCount": 101,
+      "status": "Active"
     },
     {
       "id": 129,
-      "name": "Sách Luyện Thi Đại Học - Cao Đẳng"
+      "name": "Sách Luyện Thi Đại Học - Cao Đẳng",
+      "booksCount": 131,
+      "status": "Active"
     },
     {
       "id": 130,
-      "name": "Tâm lý học hành vi"
+      "name": "Tâm lý học hành vi",
+      "booksCount": 103,
+      "status": "Active"
     },
     {
       "id": 131,
-      "name": "Sách Giáo Khoa Cấp 2"
+      "name": "Sách Giáo Khoa Cấp 2",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 132,
-      "name": "Luật Hình sự"
+      "name": "Luật Hình sự",
+      "booksCount": 63,
+      "status": "Active"
     },
     {
       "id": 133,
-      "name": "Chủ nghĩa xã hội - Tư tưởng Hồ Chí Minh"
+      "name": "Chủ nghĩa xã hội - Tư tưởng Hồ Chí Minh",
+      "booksCount": 81,
+      "status": "Active"
     },
     {
       "id": 134,
-      "name": "Tâm lý học tội phạm"
+      "name": "Tâm lý học tội phạm",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 135,
-      "name": "Kỹ Năng Sáng Tạo"
+      "name": "Kỹ Năng Sáng Tạo",
+      "booksCount": 53,
+      "status": "Active"
     },
     {
       "id": 136,
-      "name": "Tô màu - Luyện chữ"
+      "name": "Tô màu - Luyện chữ",
+      "booksCount": 98,
+      "status": "Active"
     },
     {
       "id": 137,
-      "name": "Luật Hành chính"
+      "name": "Luật Hành chính",
+      "booksCount": 34,
+      "status": "Active"
     },
     {
       "id": 138,
-      "name": "Thơ"
+      "name": "Thơ",
+      "booksCount": 150,
+      "status": "Active"
     },
     {
       "id": 139,
-      "name": "Sách chuyên đề"
+      "name": "Sách chuyên đề",
+      "booksCount": 65,
+      "status": "Active"
     },
     {
       "id": 140,
-      "name": "Giáo trình đại học - cao đẳng - khác"
+      "name": "Giáo trình đại học - cao đẳng - khác",
+      "booksCount": 23,
+      "status": "Active"
     },
     {
       "id": 141,
-      "name": "Nhạc lý"
+      "name": "Nhạc lý",
+      "booksCount": 111,
+      "status": "Active"
     },
     {
       "id": 142,
-      "name": "Từ Điển Tiếng Việt"
+      "name": "Từ Điển Tiếng Việt",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 143,
-      "name": "Luyện thi N5"
+      "name": "Luyện thi N5",
+      "booksCount": 45,
+      "status": "Active"
     },
     {
       "id": 144,
-      "name": "Luyện thi N3"
+      "name": "Luyện thi N3",
+      "booksCount": 149,
+      "status": "Active"
     },
     {
       "id": 145,
-      "name": "Ăn kiêng - Giảm cân"
+      "name": "Ăn kiêng - Giảm cân",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 146,
-      "name": "Tin Học Văn Phòng"
+      "name": "Tin Học Văn Phòng",
+      "booksCount": 20,
+      "status": "Active"
     },
     {
       "id": 147,
-      "name": "Tập viết chữ Hán"
+      "name": "Tập viết chữ Hán",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 148,
-      "name": "Kỹ thuật Nhiếp Ảnh"
+      "name": "Kỹ thuật Nhiếp Ảnh",
+      "booksCount": 135,
+      "status": "Active"
     },
     {
       "id": 149,
-      "name": "Châu Á"
+      "name": "Châu Á",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 150,
-      "name": "Sách học tiếng hoa - khác"
+      "name": "Sách học tiếng hoa - khác",
+      "booksCount": 69,
+      "status": "Active"
     },
     {
       "id": 151,
-      "name": "Luật Hôn nhân và Gia đình"
+      "name": "Luật Hôn nhân và Gia đình",
+      "booksCount": 9,
+      "status": "Active"
     },
     {
       "id": 152,
-      "name": "Họa sĩ nổi tiếng"
+      "name": "Họa sĩ nổi tiếng",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 153,
-      "name": "Phương pháp giáo dục con của người Nhật"
+      "name": "Phương pháp giáo dục con của người Nhật",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 154,
-      "name": "Sách Giáo Khoa Cấp 3"
+      "name": "Sách Giáo Khoa Cấp 3",
+      "booksCount": 62,
+      "status": "Active"
     },
     {
       "id": 155,
-      "name": "Truyện cười"
+      "name": "Truyện cười",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 156,
-      "name": "Luật Kinh tế"
+      "name": "Luật Kinh tế",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 157,
-      "name": "Luật Nhà nước"
+      "name": "Luật Nhà nước",
+      "booksCount": 0,
+      "status": "Out of stock"
     },
     {
       "id": 158,
-      "name": "Truyện Tranh Đam Mỹ"
+      "name": "Truyện Tranh Đam Mỹ",
+      "booksCount": 133,
+      "status": "Active"
     },
     {
       "id": 159,
-      "name": "Từ Điển Anh - Việt"
+      "name": "Từ Điển Anh - Việt",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 160,
-      "name": "Phương pháp giáo dục Montessori"
+      "name": "Phương pháp giáo dục Montessori",
+      "booksCount": 0,
+      "status": "Incoming stock"
     },
     {
       "id": 161,
-      "name": "Tarot"
+      "name": "Tarot",
+      "booksCount": 0,
+      "status": "Out of stock"
     }
   ],
   "books": [
@@ -761,6 +1083,78 @@
       "price": 12.50,
       "stock": 0,
       "status": "Out of Stock"
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "category": "Science Fiction",
+      "price": 13.25,
+      "stock": 12,
+      "status": "Available"
+    },
+    {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "category": "Classic",
+      "price": 10.99,
+      "stock": 8,
+      "status": "Available"
+    },
+    {
+      "id": 5,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "category": "Fantasy",
+      "price": 14.99,
+      "stock": 0,
+      "status": "Out of Stock"
+    },
+    {
+      "id": 6,
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "category": "Classic",
+      "price": 11.50,
+      "stock": 5,
+      "status": "Available"
+    },
+    {
+      "id": 7,
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "category": "Classic",
+      "price": 18.00,
+      "stock": 2,
+      "status": "Available"
+    },
+    {
+      "id": 8,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "category": "Classic",
+      "price": 9.99,
+      "stock": 0,
+      "status": "Out of Stock"
+    },
+    {
+      "id": 9,
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "category": "Science Fiction",
+      "price": 13.75,
+      "stock": 7,
+      "status": "Available"
+    },
+    {
+      "id": 10,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "category": "Fiction",
+      "price": 12.00,
+      "stock": 10,
+      "status": "Available"
     }
   ],
   "users": [
@@ -781,26 +1175,215 @@
       "role": "Customer",
       "joinedDate": "2024-01-10",
       "status": "Active"
-    }
-  ],
-  "sellers": [
+    },
     {
-      "id": 1,
-      "name": "Sarah Johnson",
-      "email": "sarah.j@email.com",
+      "id": 3,
+      "name": "Alice Johnson",
+      "email": "alice.j@email.com",
       "phone": "+1234567892",
-      "commissionRate": "15%",
-      "totalSales": 5240,
+      "role": "Admin",
+      "joinedDate": "2023-12-20",
       "status": "Active"
     },
     {
-      "id": 2,
-      "name": "Mike Wilson",
-      "email": "mike.w@email.com",
+      "id": 4,
+      "name": "Bob Brown",
+      "email": "bob.b@email.com",
       "phone": "+1234567893",
-      "commissionRate": "12%",
-      "totalSales": 3890,
+      "role": "Customer",
+      "joinedDate": "2023-11-05",
+      "status": "Inactive"
+    },
+    {
+      "id": 5,
+      "name": "Charlie Green",
+      "email": "charlie.g@email.com",
+      "phone": "+1234567894",
+      "role": "Customer",
+      "joinedDate": "2024-01-01",
+      "status": "Suspended"
+    },
+    {
+      "id": 6,
+      "name": "Diana Prince",
+      "email": "diana.p@email.com",
+      "phone": "+1234567895",
+      "role": "Admin",
+      "joinedDate": "2023-10-15",
       "status": "Active"
+    },
+    {
+      "id": 7,
+      "name": "Eve Adams",
+      "email": "eve.a@email.com",
+      "phone": "+1234567896",
+      "role": "Customer",
+      "joinedDate": "2023-09-30",
+      "status": "Active"
+    },
+    {
+      "id": 8,
+      "name": "Frank Miller",
+      "email": "frank.m@email.com",
+      "phone": "+1234567897",
+      "role": "Customer",
+      "joinedDate": "2023-08-25",
+      "status": "Inactive"
+    },
+    {
+      "id": 9,
+      "name": "Grace Lee",
+      "email": "grace.l@email.com",
+      "phone": "+1234567898",
+      "role": "Customer",
+      "joinedDate": "2023-07-12",
+      "status": "Active"
+    },
+    {
+      "id": 10,
+      "name": "Henry Ford",
+      "email": "henry.f@email.com",
+      "phone": "+1234567899",
+      "role": "Customer",
+      "joinedDate": "2023-06-18",
+      "status": "Suspended"
+    },
+    {
+      "id": 11,
+      "name": "Ivy Chen",
+      "email": "ivy.c@email.com",
+      "phone": "+1234567800",
+      "role": "Customer",
+      "joinedDate": "2024-02-01",
+      "status": "Suspended"
+    },
+    {
+      "id": 12,
+      "name": "Jack Wilson",
+      "email": "jack.w@email.com",
+      "phone": "+1234567801",
+      "role": "Customer",
+      "joinedDate": "2024-01-28",
+      "status": "Inactive"
+    },
+    {
+      "id": 13,
+      "name": "Karen Martinez",
+      "email": "karen.m@email.com",
+      "phone": "+1234567802",
+      "role": "Admin",
+      "joinedDate": "2024-01-25",
+      "status": "Active"
+    },
+    {
+      "id": 14,
+      "name": "Liam Taylor",
+      "email": "liam.t@email.com",
+      "phone": "+1234567803",
+      "role": "Customer",
+      "joinedDate": "2024-01-20",
+      "status": "Suspended"
+    },
+    {
+      "id": 15,
+      "name": "Mia Anderson",
+      "email": "mia.a@email.com",
+      "phone": "+1234567804",
+      "role": "Customer",
+      "joinedDate": "2024-01-18",
+      "status": "Inactive"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Top 10 Books to Read in 2024",
+      "author": "John Doe",
+      "category": "Reviews",
+      "views": 1250,
+      "comments": 45,
+      "status": "Published"
+    },
+    {
+      "id": 2,
+      "title": "How to Start a Reading Habit",
+      "author": "Jane Smith",
+      "category": "Guides",
+      "views": 890,
+      "comments": 32,
+      "status": "Published"
+    },
+    {
+      "id": 3,
+      "title": "New Book Releases This Month",
+      "author": "Alice Johnson",
+      "category": "News",
+      "views": 1560,
+      "comments": 28,
+      "status": "Published"
+    },
+    {
+      "id": 4,
+      "title": "Book Review: The Midnight Library",
+      "author": "Bob Brown",
+      "category": "Reviews",
+      "views": 720,
+      "comments": 15,
+      "status": "Draft"
+    },
+    {
+      "id": 5,
+      "title": "Author Interview: Sarah Parker",
+      "author": "Charlie Green",
+      "category": "News",
+      "views": 980,
+      "comments": 23,
+      "status": "Published"
+    },
+    {
+      "id": 6,
+      "title": "Reading Tips for Beginners",
+      "author": "Diana Prince",
+      "category": "Guides",
+      "views": 2100,
+      "comments": 67,
+      "status": "Published"
+    },
+    {
+      "id": 7,
+      "title": "Book Club Discussion Guide",
+      "author": "Eve Adams",
+      "category": "Guides",
+      "views": 450,
+      "comments": 12,
+      "status": "Draft"
+    },
+    {
+      "id": 8,
+      "title": "Literary Awards 2024",
+      "author": "Frank Miller",
+      "category": "News",
+      "views": 1350,
+      "comments": 34,
+      "status": "Published"
+    },
+    {
+      "id": 9,
+      "title": "Book Review: Project Hail Mary",
+      "author": "Grace Lee",
+      "category": "Reviews",
+      "views": 890,
+      "comments": 29,
+      "status": "Archived"
+    },
+    {
+      "id": 10,
+      "title": "How to Write a Book Review",
+      "author": "Henry Ford",
+      "category": "Guides",
+      "views": 1680,
+      "comments": 41,
+      "status": "Published"
     }
   ],
   "transactions": [
@@ -832,6 +1415,76 @@
       "amount": 13.25,
       "paymentMethod": "Debit Card",
       "date": "2024-01-13",
+      "status": "Completed"
+    },
+    {
+      "id": "TXN004",
+      "customer": "Alice Johnson",
+      "seller": "Linda White",
+      "book": "Pride and Prejudice",
+      "amount": 10.99,
+      "paymentMethod": "Credit Card",
+      "date": "2024-01-12",
+      "status": "Completed"
+    },
+    {
+      "id": "TXN005",
+      "customer": "Bob Brown",
+      "seller": "Tom Black",
+      "book": "The Hobbit",
+      "amount": 14.99,
+      "paymentMethod": "PayPal",
+      "date": "2024-01-11",
+      "status": "Pending"
+    },
+    {
+      "id": "TXN006",
+      "customer": "Charlie Green",
+      "seller": "Emma Brown",
+      "book": "Moby Dick",
+      "amount": 11.50,
+      "paymentMethod": "Credit Card",
+      "date": "2024-01-10",
+      "status": "Completed"
+    },
+    {
+      "id": "TXN007",
+      "customer": "Diana Prince",
+      "seller": "Jack Green",
+      "book": "War and Peace",
+      "amount": 18.00,
+      "paymentMethod": "Debit Card",
+      "date": "2024-01-09",
+      "status": "Completed"
+    },
+    {
+      "id": "TXN008",
+      "customer": "Eve Adams",
+      "seller": "Olivia Blue",
+      "book": "The Catcher in the Rye",
+      "amount": 9.99,
+      "paymentMethod": "PayPal",
+      "date": "2024-01-08",
+      "status": "Pending"
+    },
+    {
+      "id": "TXN009",
+      "customer": "Frank Miller",
+      "seller": "Noah Red",
+      "book": "Brave New World",
+      "amount": 13.75,
+      "paymentMethod": "Credit Card",
+      "date": "2024-01-07",
+      "status": "Completed"
+    },
+    {
+      "id": "TXN010",
+      "customer": "Grace Lee",
+      "seller": "Sophia Violet",
+      "book": "The Alchemist",
+      "amount": 12.00,
+      "paymentMethod": "Debit Card",
+      "date": "2024-01-06",
       "status": "Completed"
     }
   ]

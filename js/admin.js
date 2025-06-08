@@ -320,12 +320,19 @@ function renderCategories(categories) {
     }).join('');
 }
 
-// Render books
+// Lưu danh sách sách hiện tại để tra cứu nhanh
+let currentBooks = [];
+
+// Cập nhật currentBooks khi renderBooks
 function renderBooks(books) {
+    currentBooks = books;
     const tbody = document.querySelector('#booksTable tbody');
     if (!tbody) return;
     
-    tbody.innerHTML = books.map(book => `
+    tbody.innerHTML = books.map(book => {
+        // Escape single quotes in title for HTML attribute
+        const safeTitle = book.title.replace(/'/g, "\\'");
+        return `
         <tr>
             <td>
                 <div class="bg-light rounded d-flex align-items-center justify-content-center"
@@ -340,15 +347,84 @@ function renderBooks(books) {
             <td>${book.stock}</td>
             <td><span class="badge bg-${book.status === 'Available' ? 'success' : 'danger'}">${book.status}</span></td>
             <td>
-                <button class="btn btn-sm btn-outline-primary me-1">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-danger">
-                    <i class="fas fa-trash"></i>
-                </button>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-primary" title="Edit" onclick="editBook('${safeTitle}')">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-info" title="View Details" onclick="viewBook('${safeTitle}')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-warning" title="Update Stock" onclick="updateStock('${safeTitle}')">
+                        <i class="fas fa-boxes"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Delete" onclick="deleteBook('${safeTitle}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
             </td>
         </tr>
-    `).join('');
+    `;
+    }).join('');
+}
+
+// Hàm mở modal và điền thông tin sách
+function openEditBookModal(book, readonly = false) {
+    // Điền dữ liệu vào form
+    document.getElementById('editBookTitle').value = book.title;
+    document.getElementById('editBookAuthor').value = book.author;
+    document.getElementById('editBookCategory').value = book.category;
+    document.getElementById('editBookPrice').value = book.price;
+    document.getElementById('editBookStock').value = book.stock;
+    document.getElementById('editBookDescription').value = book.description || '';
+    // Không set file input vì lý do bảo mật trình duyệt
+
+    // Đặt readonly hoặc không
+    [
+        'editBookTitle',
+        'editBookAuthor',
+        'editBookCategory',
+        'editBookPrice',
+        'editBookStock',
+        'editBookDescription',
+        'editBookImage'
+    ].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.readOnly = readonly;
+        if (el && el.tagName === 'SELECT') el.disabled = readonly;
+        if (el && el.type === 'file') el.disabled = readonly;
+    });
+
+    // Đổi tiêu đề modal
+    document.getElementById('editBookModalTitle').textContent = readonly ? 'View Book' : 'Edit Book';
+    // Ẩn/hiện nút Save
+    document.querySelector('#editBookForm .btn-primary').style.display = readonly ? 'none' : '';
+
+    // Hiện modal
+    const modal = new bootstrap.Modal(document.getElementById('editBookModal'));
+    modal.show();
+}
+
+// Sửa lại các hàm action
+function editBook(title) {
+    const book = currentBooks.find(b => b.title === title);
+    if (book) openEditBookModal(book, false);
+    else showToast('Không tìm thấy sách!', 'error');
+}
+
+function viewBook(title) {
+    const book = currentBooks.find(b => b.title === title);
+    if (book) openEditBookModal(book, true);
+    else showToast('Không tìm thấy sách!', 'error');
+}
+
+function updateStock(id) {
+    showToast(`Cập nhật số lượng sách ID: ${id}`, "info");
+}
+
+function deleteBook(id) {
+    if (confirm('Bạn có chắc chắn muốn xóa sách này?')) {
+        showToast(`Đã xóa sách ID: ${id}`, "success");
+    }
 }
 
 // Render users
@@ -571,4 +647,9 @@ document.getElementById('addBookForm')?.addEventListener('submit', async functio
     };
 
     await addBook(bookData);
-}); 
+});
+
+window.editBook = editBook;
+window.viewBook = viewBook;
+window.updateStock = updateStock;
+window.deleteBook = deleteBook; 

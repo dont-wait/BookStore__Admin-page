@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .main-content {
+        margin-left: 70px;
+    }
+
+    .nav-text {
+        display: none;
+    }
+}

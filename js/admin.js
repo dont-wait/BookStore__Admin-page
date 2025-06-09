@@ -1,7 +1,7 @@
 import { showToast } from "./toast.js";
 
 // Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Navigation functionality
     const navLinks = document.querySelectorAll('.sidebar .nav-link');
     const contentSections = document.querySelectorAll('.content-section');
@@ -263,7 +263,7 @@ function renderDashboardStats(stats) {
 function renderRecentTransactions(transactions) {
     const tbody = document.querySelector('#recentTransactionsTable tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = transactions.map(tx => `
         <tr>
             <td>#${tx.id}</td>
@@ -279,7 +279,7 @@ function renderRecentTransactions(transactions) {
 function renderTopSellingBooks(books) {
     const listGroup = document.querySelector('#dashboard .list-group');
     if (!listGroup) return;
-    
+
     listGroup.innerHTML = books.map(book => `
         <div class="list-group-item d-flex justify-content-between align-items-center border-0">
             <div>
@@ -295,12 +295,12 @@ function renderTopSellingBooks(books) {
 function renderCategories(categories) {
     const tbody = document.querySelector('#categoriesTable tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = categories.map(category => {
         let badgeClass = 'bg-secondary';
         if (category.status === 'Active') badgeClass = 'bg-success';
-        else if (category.status === 'Out of stock') badgeClass = 'bg-danger';
-        else if (category.status === 'Incoming stock') badgeClass = 'bg-warning';
+        else if (category.status === 'Out of quantity') badgeClass = 'bg-danger';
+        else if (category.status === 'Incoming quantity') badgeClass = 'bg-warning';
         return `
             <tr>
                 <td>${category.id}</td>
@@ -328,9 +328,8 @@ function renderBooks(books) {
     currentBooks = books;
     const tbody = document.querySelector('#booksTable tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = books.map(book => {
-        // Escape single quotes in title for HTML attribute
         const safeTitle = book.title.replace(/'/g, "\\'");
         return `
         <tr>
@@ -343,9 +342,10 @@ function renderBooks(books) {
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.category}</td>
-            <td>$${book.price.toFixed(2)}</td>
-            <td>${book.stock}</td>
-            <td><span class="badge bg-${book.status === 'Available' ? 'success' : 'danger'}">${book.status}</span></td>
+            <td>$${book.cost.toFixed(2)}</td>
+            <td>${book.quantity}</td>
+            <td><span class="badge bg-success">Available</span></td>
+            
             <td>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-sm btn-outline-primary" title="Edit" onclick="editBook('${safeTitle}')">
@@ -367,16 +367,13 @@ function renderBooks(books) {
     }).join('');
 }
 
-// Hàm mở modal và điền thông tin sách
 function openEditBookModal(book, readonly = false) {
-    // Điền dữ liệu vào form
     document.getElementById('editBookTitle').value = book.title;
     document.getElementById('editBookAuthor').value = book.author;
     document.getElementById('editBookCategory').value = book.category;
-    document.getElementById('editBookPrice').value = book.price;
-    document.getElementById('editBookStock').value = book.stock;
+    document.getElementById('editBookPrice').value = book.cost;
+    document.getElementById('editBookStock').value = book.quantity;
     document.getElementById('editBookDescription').value = book.description || '';
-    // Không set file input vì lý do bảo mật trình duyệt
 
     // Đặt readonly hoặc không
     [
@@ -404,7 +401,6 @@ function openEditBookModal(book, readonly = false) {
     modal.show();
 }
 
-// Sửa lại các hàm action
 function editBook(title) {
     const book = currentBooks.find(b => b.title === title);
     if (book) openEditBookModal(book, false);
@@ -431,7 +427,7 @@ function deleteBook(id) {
 function renderUsers(users) {
     const tbody = document.querySelector('#usersTable tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = users.map(user => {
         // Determine badge class based on status
         let badgeClass = 'bg-success'; // Default for Active
@@ -470,7 +466,7 @@ function renderUsers(users) {
 function renderBlogs(blogs) {
     const tbody = document.querySelector('#blogsTable tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = blogs.map(blog => `
         <tr>
             <td>${blog.id}</td>
@@ -499,7 +495,7 @@ function renderBlogs(blogs) {
 function renderTransactions(transactions) {
     const tbody = document.querySelector('#transactionsTable tbody');
     if (!tbody) return;
-    
+
     tbody.innerHTML = transactions.map(tx => `
         <tr>
             <td>#${tx.id}</td>
@@ -527,15 +523,15 @@ document.querySelectorAll('.sidebar__nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
         const section = e.target.closest('.sidebar__nav-link').dataset.section;
-        
+
         // Update active states
         document.querySelectorAll('.sidebar__nav-link').forEach(l => l.classList.remove('sidebar__nav-link--active'));
         e.target.closest('.sidebar__nav-link').classList.add('sidebar__nav-link--active');
-        
+
         // Update content sections
         document.querySelectorAll('.content-section').forEach(s => s.classList.remove('content-section--active'));
         document.getElementById(section).classList.add('content-section--active');
-        
+
         // Update page title
         document.getElementById('pageTitle').textContent = section.charAt(0).toUpperCase() + section.slice(1);
     });
@@ -567,14 +563,14 @@ function validateBook(bookData) {
         return false;
     }
 
-    // Validate price
-    if (!bookData.price || isNaN(bookData.price) || bookData.price <= 0) {
+    // Validate cost
+    if (!bookData.cost || isNaN(bookData.cost) || bookData.cost <= 0) {
         showToast("Giá sách phải lớn hơn 0", "error");
         return false;
     }
 
-    // Validate stock
-    if (!bookData.stock || isNaN(bookData.stock) || bookData.stock < 0) {
+    // Validate quantity
+    if (!bookData.quantity || isNaN(bookData.quantity) || bookData.quantity < 0) {
         showToast("Số lượng sách không được âm", "error");
         return false;
     }
@@ -611,14 +607,14 @@ async function addBook(bookData) {
             title: bookData.title.trim(),
             author: bookData.author.trim(),
             category: bookData.category,
-            price: parseFloat(bookData.price),
-            stock: parseInt(bookData.stock),
-            status: bookData.stock > 0 ? "Available" : "Out of Stock"
+            cost: parseFloat(bookData.cost),
+            quantity: parseInt(bookData.quantity),
+            status: bookData.quantity > 0 ? "Available" : "Out of Stock"
         };
 
         // Show success message
         showToast("Thêm sách thành công!");
-        
+
         // Reset form and close modal
         document.getElementById('addBookForm').reset();
         const modal = bootstrap.Modal.getInstance(document.getElementById('addBookModal'));
@@ -633,7 +629,7 @@ async function addBook(bookData) {
 }
 
 // Handle add book form submission
-document.getElementById('addBookForm')?.addEventListener('submit', async function(e) {
+document.getElementById('addBookForm')?.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const formData = new FormData(this);
@@ -641,8 +637,8 @@ document.getElementById('addBookForm')?.addEventListener('submit', async functio
         title: formData.get('title'),
         author: formData.get('author'),
         category: formData.get('category'),
-        price: formData.get('price'),
-        stock: formData.get('stock'),
+        cost: formData.get('cost'),
+        quantity: formData.get('quantity'),
         image: formData.get('image')
     };
 
@@ -652,4 +648,4 @@ document.getElementById('addBookForm')?.addEventListener('submit', async functio
 window.editBook = editBook;
 window.viewBook = viewBook;
 window.updateStock = updateStock;
-window.deleteBook = deleteBook; 
+window.deleteBook = deleteBook;

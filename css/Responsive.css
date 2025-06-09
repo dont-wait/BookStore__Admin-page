@@ -1,38 +1,27 @@
 @media (max-width: 768px) {
     .sidebar {
-        width: 70px;
+        width: 4.375rem;
     }
-
     .main-content {
-        margin-left: 70px;
+        margin-left: 4.375rem;
     }
-
-    .nav-text {
+    .sidebar__nav-text,
+    .sidebar__brand-title {
         display: none;
     }
-
-        .sidebar {
-            width: 4.375rem;
-        }
-        
-        .main-content {
-            margin-left: 4.375rem;
-        }
-        
-        .sidebar__nav-text {
-            display: none;
-        }
-        
-        .sidebar__brand-title {
-            display: none;
-        }
-        
-        .table-responsive {
-            max-height: 40vh;
-        }
-        .table thead th, .table tbody td {
-            font-size: 0.95rem;
-            padding: 0.5rem;
-        }
+    .table-responsive,
+    .dashboard__table-responsive,
+    .categories__table-responsive,
+    .books__table-responsive,
+    .users__table-responsive,
+    .blogs__table-responsive,
+    .transactions__table-responsive {
+        max-height: 40vh;
     }
+    .table thead th, .table tbody td,
+    .dashboard__table-th, .categories__table-th, .books__table-th, .users__table-th, .blogs__table-th, .transactions__table-th {
+        font-size: 0.95rem;
+        padding: 0.5rem;
+    }
+}
 

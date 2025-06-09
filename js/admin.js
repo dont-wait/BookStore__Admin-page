@@ -1,4 +1,38 @@
 import { showToast } from "./toast.js";
+const sidebar = document.getElementById('sidebar');
+const toggleBtn = document.getElementById('toggleSidebar');
+const overlay = document.getElementById('sidebarOverlay');
+
+// Mở sidebar
+function openSidebar() {
+    sidebar.classList.add('sidebar--open');
+    overlay.classList.remove('hidden');
+}
+
+// Đóng sidebar
+function closeSidebar() {
+    sidebar.classList.remove('sidebar--open');
+    overlay.classList.add('hidden');
+}
+
+// Toggle khi bấm nút
+toggleBtn.addEventListener('click', function () {
+    if (sidebar.classList.contains('sidebar--open')) {
+        closeSidebar();
+    } else {
+        openSidebar();
+    }
+});
+
+// Đóng khi bấm ra ngoài
+overlay.addEventListener('click', closeSidebar);
+
+// Đảm bảo sidebar ẩn khi resize về mobile
+window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) {
+        closeSidebar();
+    }
+});
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
@@ -98,6 +132,36 @@ async function fetchData() {
         showToast("Gọi dữ liệu không thành công");
         return null;
     }
+}
+// Biến lưu instance DataTable cho từng bảng
+let userTable = null;
+let bookTable = null;
+let blogTable = null;
+let transactionTable = null;
+let recentTransactionsTable = null;
+
+// Hàm khởi tạo DataTable cho từng bảng
+function initTable(tableId, dataTableVar, options = {}) {
+    if (window[dataTableVar]) {
+        window[dataTableVar].destroy();
+    }
+    window[dataTableVar] = new simpleDatatables.DataTable(`#${tableId}`, {
+        searchable: true,
+        fixedHeight: true,
+        perPage: 10,
+        perPageSelect: [5, 10, 15, 20, 25],
+        labels: {
+            placeholder: "Search...",
+            perPage: "Show ${select} entries",
+            noRows: "No data to display",
+            info: "Showing {start} to {end} of {rows} entries"
+        },
+        layout: {
+            top: "{search}",
+            bottom: "{info}{pager}"
+        },
+        ...options
+    });
 }
 
 // Initialize DataTables

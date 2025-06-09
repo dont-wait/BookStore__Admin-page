@@ -12,8 +12,8 @@
     <!-- https://github.com/fiduswriter/simple-datatables -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/Admin.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/Admin.css">
     <link rel="stylesheet" href="css/Responsive.css">
 
 </head>
@@ -21,36 +21,40 @@
 <body>
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-        <div class="sidebar__brand">
-            <h4 class="sidebar__brand-title"><i class="fas fa-book"></i> <span
-                    class="sidebar__brand-text">Paperbacks</span></h4>
+        <div class="sidebar-overlay hidden" id="sidebarOverlay">
+
+
+            <div class="sidebar__brand">
+                <h4 class="sidebar__brand-title"><i class="fas fa-book"></i> <span
+                        class="sidebar__brand-text">Paperbacks</span></h4>
+            </div>
+            <nav class="sidebar__nav nav flex-column mt-3">
+                <a class="sidebar__nav-link sidebar__nav-link--active" href="#" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span class="sidebar__nav-text">Dashboard</span>
+                </a>
+                <a class="sidebar__nav-link" href="#" data-section="categories">
+                    <i class="fas fa-tags"></i>
+                    <span class="sidebar__nav-text">Book Categories</span>
+                </a>
+                <a class="sidebar__nav-link" href="#" data-section="books">
+                    <i class="fas fa-book"></i>
+                    <span class="sidebar__nav-text">Books</span>
+                </a>
+                <a class="sidebar__nav-link" href="#" data-section="users">
+                    <i class="fas fa-users"></i>
+                    <span class="sidebar__nav-text">Users</span>
+                </a>
+                <a class="sidebar__nav-link" href="#" data-section="blogs">
+                    <i class="fas fa-blog"></i>
+                    <span class="sidebar__nav-text">Blogs</span>
+                </a>
+                <a class="sidebar__nav-link" href="#" data-section="transactions">
+                    <i class="fas fa-credit-card"></i>
+                    <span class="sidebar__nav-text">Transactions</span>
+                </a>
+            </nav>
         </div>
-        <nav class="sidebar__nav nav flex-column mt-3">
-            <a class="sidebar__nav-link sidebar__nav-link--active" href="#" data-section="dashboard">
-                <i class="fas fa-tachometer-alt"></i>
-                <span class="sidebar__nav-text">Dashboard</span>
-            </a>
-            <a class="sidebar__nav-link" href="#" data-section="categories">
-                <i class="fas fa-tags"></i>
-                <span class="sidebar__nav-text">Book Categories</span>
-            </a>
-            <a class="sidebar__nav-link" href="#" data-section="books">
-                <i class="fas fa-book"></i>
-                <span class="sidebar__nav-text">Books</span>
-            </a>
-            <a class="sidebar__nav-link" href="#" data-section="users">
-                <i class="fas fa-users"></i>
-                <span class="sidebar__nav-text">Users</span>
-            </a>
-            <a class="sidebar__nav-link" href="#" data-section="blogs">
-                <i class="fas fa-blog"></i>
-                <span class="sidebar__nav-text">Blogs</span>
-            </a>
-            <a class="sidebar__nav-link" href="#" data-section="transactions">
-                <i class="fas fa-credit-card"></i>
-                <span class="sidebar__nav-text">Transactions</span>
-            </a>
-        </nav>
     </div>
 
     <!-- Main Content -->

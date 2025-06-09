@@ -409,7 +409,6 @@ function renderBooks(books) {
             <td>$${book.cost.toFixed(2)}</td>
             <td>${book.quantity}</td>
             <td><span class="badge bg-success">Available</span></td>
-            
             <td>
                 <div class="btn-group" role="group">
                     <button type="button" class="btn btn-sm btn-outline-primary" title="Edit" onclick="editBook('${safeTitle}')">
